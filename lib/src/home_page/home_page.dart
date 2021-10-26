@@ -6,10 +6,16 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: const [
-        SliverToBoxAdapter(child: AppHeader()),
-      ],
-    );
+    // TODO: Move mobile navigation custom logic here? (and place outside customScrollView)
+    return AppHeader();
+    // return CustomScrollView(
+    //   slivers: const [
+    //     SliverToBoxAdapter(child: AppHeader()),
+    //   ],
+    // );
   }
 }
+/*
+- header 
+- mobile menu (stack?)
+*/
