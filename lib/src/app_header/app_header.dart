@@ -61,7 +61,7 @@ class MobileNavigationLayout extends StatefulWidget {
 class _MobileNavigationLayoutState extends State<MobileNavigationLayout>
     with SingleTickerProviderStateMixin {
   late final _menuController = AnimationController(
-      vsync: this, duration: const Duration(milliseconds: 250));
+      vsync: this, duration: const Duration(milliseconds: 150));
 
   void _toggleMenu() {
     if (_menuController.isCompleted) {
@@ -83,7 +83,6 @@ class _MobileNavigationLayoutState extends State<MobileNavigationLayout>
             child: Column(
               children: [
                 SizedBox(
-                  // TODO: animate total size
                   height: 64,
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -106,7 +105,7 @@ class _MobileNavigationLayoutState extends State<MobileNavigationLayout>
                     ],
                   ),
                 ),
-                MobileNavigationMenu(),
+                const Expanded(child: MobileNavigationMenu()),
               ],
             ),
           );

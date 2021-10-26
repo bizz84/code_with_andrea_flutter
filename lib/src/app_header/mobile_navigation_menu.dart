@@ -11,8 +11,8 @@ class MobileNavigationMenu extends StatelessWidget {
     return Material(
       color: AppColors.neutral6,
       // TODO: Fix me
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+      child: ListView(
+        shrinkWrap: true,
         children: const [
           MobileMenuListTile(
             title: 'Tutorials',
