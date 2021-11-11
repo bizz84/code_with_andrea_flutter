@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       return MaterialApp(
         title: 'Code With Andrea',
         debugShowCheckedModeBanner: false,
+        themeMode: ThemeMode.dark,
         theme: ThemeData(
           primarySwatch: Colors.blue,
           textTheme: TextTheme(

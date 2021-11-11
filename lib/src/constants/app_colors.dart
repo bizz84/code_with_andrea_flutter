@@ -10,12 +10,12 @@ class AppColors {
   static const primary2 = Color(0xFFD6DEFF);
   static const primary1 = Color(0xFFF7F9FF);
 
-  static const neutral6 = Color(0xFF0C122B);
-  static const neutral5 = Color(0xFF3B415F);
-  static const neutral4 = Color(0xFF6E7593);
-  static const neutral3 = Color(0xFFA7AECA);
-  static const neutral2 = Color(0xFFCCD0E5);
-  static const neutral1 = Color(0xFFF5F6FC);
+  static const neutral6 = Color(0xFF0F0F0F);
+  static const neutral5 = Color(0xFF4A4B4F);
+  static const neutral4 = Color(0xFF7C7E84);
+  static const neutral3 = Color(0xFFB5B6BC);
+  static const neutral2 = Color(0xFFD7D7DB);
+  static const neutral1 = Color(0xFFF8F9F9);
 
   static const yellow = Color(0xFFE3BE1B);
   static const blue = Color(0xFF204F96);
