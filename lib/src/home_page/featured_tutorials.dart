@@ -2,7 +2,7 @@ import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
 import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
 import 'package:code_with_andrea_flutter/src/home_page/item_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:flutter_layout_grid/flutter_layout_grid.dart';
 
 class FeaturedTutorialsHeader extends StatelessWidget {
   const FeaturedTutorialsHeader({Key? key}) : super(key: key);
@@ -46,26 +46,45 @@ class FeaturedTutorialsContent extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final crossAxisCount =
         screenWidth >= Breakpoints.twoColLayoutMinWidth ? 2 : 1;
-
     return SliverPadding(
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding(screenWidth)),
-      sliver: SliverStaggeredGrid(
-        key: ValueKey(crossAxisCount),
-        // TODO: Tweak later
-        gridDelegate: SliverStaggeredGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: crossAxisCount,
-            mainAxisSpacing: 40.0,
-            crossAxisSpacing: 24.0,
-            staggeredTileBuilder: (index) {
-              return const StaggeredTile.fit(1);
-            }),
-        delegate: SliverChildBuilderDelegate(
-          (BuildContext context, int index) {
-            print(index);
-            return ItemCard(data: ItemCardData.allItemsData[index]);
-          },
-          childCount: 4,
-        ),
+      sliver: LayoutGrid(
+        columnSizes: [1.fr, 24.px, 1.fr],
+        rowSizes: [
+          auto, // auto size height
+          40.px, // spacing
+          auto, // auto size height
+        ],
+        children: [
+          GridPlacement(
+            columnStart: 0,
+            columnSpan: 1,
+            rowStart: 0,
+            rowSpan: 1,
+            child: ItemCard(data: ItemCardData.allItemsData[0]),
+          ),
+          GridPlacement(
+            columnStart: 2,
+            columnSpan: 1,
+            rowStart: 0,
+            rowSpan: 1,
+            child: ItemCard(data: ItemCardData.allItemsData[1]),
+          ),
+          GridPlacement(
+            columnStart: 0,
+            columnSpan: 1,
+            rowStart: 2,
+            rowSpan: 1,
+            child: ItemCard(data: ItemCardData.allItemsData[2]),
+          ),
+          GridPlacement(
+            columnStart: 2,
+            columnSpan: 1,
+            rowStart: 2,
+            rowSpan: 1,
+            child: ItemCard(data: ItemCardData.allItemsData[3]),
+          ),
+        ],
       ),
     );
   }
