@@ -15,7 +15,8 @@ class EmailSignup extends StatelessWidget {
       child: SizedBox(
         width: width,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: isWide ? 0 : 20),
+          padding:
+              EdgeInsets.symmetric(horizontal: horizontalPadding(screenWidth)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [

@@ -1,7 +1,9 @@
 import 'package:code_with_andrea_flutter/src/app_header/app_header.dart';
 import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
 import 'package:code_with_andrea_flutter/src/home_page/email_signup.dart';
+import 'package:code_with_andrea_flutter/src/home_page/featured_tutorials.dart';
 import 'package:code_with_andrea_flutter/src/home_page/intro.dart';
+import 'package:code_with_andrea_flutter/src/home_page/section_separator.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -16,12 +18,13 @@ class HomePage extends StatelessWidget {
           SliverToBoxAdapter(child: AppHeader()),
           SliverToBoxAdapter(child: Intro()),
           SliverToBoxAdapter(child: EmailSignup()),
+          SliverToBoxAdapter(child: SectionSeparator()),
+          SliverToBoxAdapter(child: FeaturedTutorialsHeader()),
+          SliverToBoxAdapter(child: SizedBox(height: 52)),
+          FeaturedTutorialsContent(), // already a Sliver
+          SliverToBoxAdapter(child: FeaturedTutorialsFooter()),
         ],
       ),
     );
   }
 }
-/*
-- header 
-- mobile menu (stack?)
-*/

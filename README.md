@@ -18,5 +18,14 @@
   - [x] Footer
   - [x] Responsive
   - [ ] Button hover state
-
+- [ ] Featured Tutorials
+  - [ ] Heading 
+  - [ ] Button
+  - [ ] Card design
+    - [ ] Image
+    - [ ] Title
+    - [ ] Metadata (date, read time)
+    - [ ] Tags
+    - [ ] Description
+    - [ ] Hover effect
 
