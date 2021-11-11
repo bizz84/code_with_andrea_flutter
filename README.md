@@ -19,13 +19,14 @@
   - [x] Responsive
   - [ ] Button hover state
 - [ ] Featured Tutorials
-  - [ ] Heading 
-  - [ ] Button
-  - [ ] Card design
-    - [ ] Image
-    - [ ] Title
+  - [x] Heading 
+  - [x] Button
+  - [x] Slivers
+  - [x] Card design
+    - [x] Image
+    - [x] Title
     - [ ] Metadata (date, read time)
     - [ ] Tags
-    - [ ] Description
+    - [x] Description
     - [ ] Hover effect
 

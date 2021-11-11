@@ -1,6 +1,8 @@
 import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
 import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
+import 'package:code_with_andrea_flutter/src/home_page/item_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class FeaturedTutorialsHeader extends StatelessWidget {
   const FeaturedTutorialsHeader({Key? key}) : super(key: key);
@@ -44,21 +46,23 @@ class FeaturedTutorialsContent extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final crossAxisCount =
         screenWidth >= Breakpoints.twoColLayoutMinWidth ? 2 : 1;
+
     return SliverPadding(
       padding: EdgeInsets.symmetric(horizontal: horizontalPadding(screenWidth)),
-      sliver: SliverGrid(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: crossAxisCount,
-          mainAxisSpacing: 40.0,
-          crossAxisSpacing: 24.0,
-        ),
+      sliver: SliverStaggeredGrid(
+        key: ValueKey(crossAxisCount),
+        // TODO: Tweak later
+        gridDelegate: SliverStaggeredGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: crossAxisCount,
+            mainAxisSpacing: 40.0,
+            crossAxisSpacing: 24.0,
+            staggeredTileBuilder: (index) {
+              return const StaggeredTile.fit(1);
+            }),
         delegate: SliverChildBuilderDelegate(
           (BuildContext context, int index) {
-            return Container(
-              alignment: Alignment.center,
-              color: Colors.teal[100 * ((index + 1) % 9)],
-              child: Text('grid item $index'),
-            );
+            print(index);
+            return ItemCard(data: ItemCardData.allItemsData[index]);
           },
           childCount: 4,
         ),
