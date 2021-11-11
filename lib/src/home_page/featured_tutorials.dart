@@ -16,20 +16,28 @@ class FeaturedTutorialsHeader extends StatelessWidget {
         child: Padding(
           padding:
               EdgeInsets.symmetric(horizontal: horizontalPadding(screenWidth)),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+          child: Column(
             children: [
-              Text(
-                'Featured Tutorials',
-                style: Theme.of(context)
-                    .textTheme
-                    .headline4!
-                    .copyWith(color: Colors.white),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    'Featured Tutorials',
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline4!
+                        .copyWith(color: Colors.white),
+                  ),
+                  if (screenWidth > Breakpoints.twoColLayoutMinWidth) ...[
+                    const Spacer(),
+                    const ExploreTutorialsButton(),
+                  ],
+                ],
               ),
-              if (screenWidth > Breakpoints.twoColLayoutMinWidth) ...[
-                const Spacer(),
-                const ExploreTutorialsButton(),
-              ],
+              SizedBox(
+                height:
+                    screenWidth > Breakpoints.twoColLayoutMinWidth ? 52 : 12,
+              ),
             ],
           ),
         ),
@@ -46,47 +54,51 @@ class FeaturedTutorialsContent extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final crossAxisCount =
         screenWidth >= Breakpoints.twoColLayoutMinWidth ? 2 : 1;
-    return SliverPadding(
-      padding: EdgeInsets.symmetric(horizontal: horizontalPadding(screenWidth)),
-      sliver: LayoutGrid(
-        columnSizes: [1.fr, 24.px, 1.fr],
-        rowSizes: [
-          auto, // auto size height
-          40.px, // spacing
-          auto, // auto size height
-        ],
-        children: [
-          GridPlacement(
-            columnStart: 0,
-            columnSpan: 1,
-            rowStart: 0,
-            rowSpan: 1,
-            child: ItemCard(data: ItemCardData.allItemsData[0]),
+    if (crossAxisCount >= 2) {
+      return SliverToBoxAdapter(
+        child: Center(
+          child: SizedBox(
+            width: Breakpoints.desktop.toDouble(),
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: horizontalPadding(screenWidth)),
+              child: LayoutGrid(
+                columnSizes: [1.fr, 1.fr],
+                rowSizes: const [auto, auto], // auto size height
+                rowGap: 40,
+                columnGap: 24,
+                children: [
+                  for (var i = 0; i < 4; i++)
+                    GridPlacement(
+                      columnStart: i % 2,
+                      columnSpan: 1,
+                      rowStart: i ~/ 2,
+                      rowSpan: 1,
+                      child: ItemCard(data: ItemCardData.allItemsData[i]),
+                    ),
+                ],
+              ),
+            ),
           ),
-          GridPlacement(
-            columnStart: 2,
-            columnSpan: 1,
-            rowStart: 0,
-            rowSpan: 1,
-            child: ItemCard(data: ItemCardData.allItemsData[1]),
-          ),
-          GridPlacement(
-            columnStart: 0,
-            columnSpan: 1,
-            rowStart: 2,
-            rowSpan: 1,
-            child: ItemCard(data: ItemCardData.allItemsData[2]),
-          ),
-          GridPlacement(
-            columnStart: 2,
-            columnSpan: 1,
-            rowStart: 2,
-            rowSpan: 1,
-            child: ItemCard(data: ItemCardData.allItemsData[3]),
-          ),
-        ],
-      ),
-    );
+        ),
+      );
+    } else {
+      // TODO: Standard ListView?
+      return SliverList(
+        delegate: SliverChildBuilderDelegate(
+          (context, index) {
+            return Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: horizontalPadding(screenWidth),
+                vertical: 12,
+              ),
+              child: ItemCard(data: ItemCardData.allItemsData[index]),
+            );
+          },
+          childCount: 4,
+        ),
+      );
+    }
   }
 }
 

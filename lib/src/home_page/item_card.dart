@@ -1,6 +1,7 @@
 import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
 import 'package:code_with_andrea_flutter/src/constants/app_text_theme.dart';
 import 'package:code_with_andrea_flutter/src/constants/constants.dart';
+import 'package:code_with_andrea_flutter/src/tags.dart';
 import 'package:flutter/material.dart';
 
 class ItemCardData {
@@ -68,6 +69,7 @@ class ItemCard extends StatelessWidget {
     return Card(
       color: AppColors.neutral5,
       elevation: 0,
+      margin: const EdgeInsets.all(0),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       child: Column(
         children: [
@@ -91,6 +93,7 @@ class ItemCard extends StatelessWidget {
             // TODO: Responsive
             padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 24),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   data.title,
@@ -104,6 +107,7 @@ class ItemCard extends StatelessWidget {
                     startText: data.dateFormatted, endText: data.readTime),
                 const SizedBox(height: 16),
                 // TODO: Tags
+                ItemMetadataTags(tags: data.tags),
                 const SizedBox(height: 20),
                 Text(
                   data.description,
@@ -132,6 +136,13 @@ class ItemMetadataWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: Responsive with LayoutBuilder
+    return Text(
+      '$startText | $endText',
+      textAlign: TextAlign.left,
+      style:
+          DesktopTextTheme().subheadAllCaps.copyWith(color: AppColors.neutral2),
+    );
+    // TODO: Would be nice to make this work without overflow
     return Row(
       children: [
         Text(
@@ -149,10 +160,37 @@ class ItemMetadataWidget extends StatelessWidget {
         const SizedBox(width: 10),
         Text(
           endText,
+          overflow: TextOverflow.clip,
           style: DesktopTextTheme()
               .subheadAllCaps
               .copyWith(color: AppColors.neutral2),
         ),
+      ],
+    );
+  }
+}
+
+class ItemMetadataTags extends StatelessWidget {
+  const ItemMetadataTags({Key? key, required this.tags}) : super(key: key);
+  final List<String> tags;
+
+  @override
+  Widget build(BuildContext context) {
+    return Wrap(
+      spacing: 8,
+      runSpacing: 16,
+      children: [
+        for (final tag in tags)
+          Chip(
+            backgroundColor: tag.color().backgroundColor,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+            label: Text(
+              tag,
+              style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                  fontWeight: FontWeight.normal, color: tag.color().color),
+            ),
+          ),
       ],
     );
   }

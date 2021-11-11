@@ -20,7 +20,6 @@ class HomePage extends StatelessWidget {
           SliverToBoxAdapter(child: EmailSignup()),
           SliverToBoxAdapter(child: SectionSeparator()),
           SliverToBoxAdapter(child: FeaturedTutorialsHeader()),
-          SliverToBoxAdapter(child: SizedBox(height: 52)),
           FeaturedTutorialsContent(), // already a Sliver
           SliverToBoxAdapter(child: FeaturedTutorialsFooter()),
         ],

@@ -70,7 +70,7 @@ class DesktopTextTheme implements AppTextTheme {
   @override
   final subheadAllCaps = const TextStyle(
       fontFamily: 'Lato',
-      fontSize: 14,
+      fontSize: 12,
       fontWeight: FontWeight.normal,
       letterSpacing: 2.5);
 

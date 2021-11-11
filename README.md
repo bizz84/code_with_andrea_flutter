@@ -22,11 +22,12 @@
   - [x] Heading 
   - [x] Button
   - [x] Slivers
+  - [x] CSS grid-style layout
   - [x] Card design
     - [x] Image
     - [x] Title
-    - [ ] Metadata (date, read time)
-    - [ ] Tags
+    - [x] Metadata (date, read time)
+    - [x] Tags
     - [x] Description
     - [ ] Hover effect
 
