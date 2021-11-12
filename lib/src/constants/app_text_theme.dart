@@ -62,7 +62,10 @@ class DesktopTextTheme implements AppTextTheme {
 
   @override
   final body = const TextStyle(
-      fontFamily: 'Lato', fontSize: 16, fontWeight: FontWeight.normal);
+      fontFamily: 'Lato',
+      fontSize: 16,
+      fontWeight: FontWeight.normal,
+      height: 1.5);
 
   @override
   final subhead = const TextStyle(
@@ -126,7 +129,10 @@ class MobileTextTheme implements AppTextTheme {
 
   @override
   final body = const TextStyle(
-      fontFamily: 'Lato', fontSize: 16, fontWeight: FontWeight.normal);
+      fontFamily: 'Lato',
+      fontSize: 16,
+      fontWeight: FontWeight.normal,
+      height: 1.5);
 
   @override
   final subhead = const TextStyle(

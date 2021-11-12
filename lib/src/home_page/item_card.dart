@@ -1,5 +1,6 @@
 import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
 import 'package:code_with_andrea_flutter/src/constants/app_text_theme.dart';
+import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
 import 'package:code_with_andrea_flutter/src/constants/constants.dart';
 import 'package:code_with_andrea_flutter/src/tags.dart';
 import 'package:flutter/material.dart';
@@ -106,6 +107,9 @@ class ItemCard extends StatelessWidget {
   final ItemCardData data;
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final horizontalPadding = screenWidth >= Breakpoints.tablet ? 32.0 : 20.0;
+    final verticalPadding = screenWidth >= Breakpoints.tablet ? 24.0 : 16.0;
     return Card(
       color: AppColors.neutral5,
       elevation: 0,
@@ -130,8 +134,8 @@ class ItemCard extends StatelessWidget {
             ),
           ),
           Padding(
-            // TODO: Responsive
-            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 24),
+            padding: EdgeInsets.symmetric(
+                horizontal: horizontalPadding, vertical: verticalPadding),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

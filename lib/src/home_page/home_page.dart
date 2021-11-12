@@ -5,6 +5,7 @@ import 'package:code_with_andrea_flutter/src/home_page/featured_tutorials.dart';
 import 'package:code_with_andrea_flutter/src/home_page/flutter_courses.dart';
 import 'package:code_with_andrea_flutter/src/home_page/intro.dart';
 import 'package:code_with_andrea_flutter/src/home_page/section_separator.dart';
+import 'package:code_with_andrea_flutter/src/home_page/testimonials.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -27,6 +28,8 @@ class HomePage extends StatelessWidget {
           SliverToBoxAdapter(child: FlutterCoursesHeader()),
           FlutterCoursesContent(),
           SliverToBoxAdapter(child: SectionSeparator()),
+          SliverToBoxAdapter(child: TestimonialsHeader()),
+          TestimonialsGrid(),
         ],
       ),
     );

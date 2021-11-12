@@ -17,6 +17,7 @@
   - [x] Email Signup button
   - [x] Footer
   - [x] Responsive
+  - [ ] Responsive paddings
   - [ ] Button hover state
 - [ ] Featured Tutorials
   - [x] Heading 
@@ -30,4 +31,9 @@
     - [x] Tags
     - [x] Description
     - [ ] Hover effect
-
+- [x] Featured Courses
+  - [x] Heading
+  - [x] Cards
+- [ ] Testimonials
+  - [ ] Scattered Grid
+  - [ ] Testimonial card design

@@ -15,3 +15,13 @@ double horizontalPadding(double screenWidth) {
     return 20;
   }
 }
+
+double sliverHorizontalPadding(double screenWidth) {
+  if (screenWidth > Breakpoints.desktop) {
+    return (screenWidth - Breakpoints.desktop) / 2;
+  } else if (screenWidth > Breakpoints.mobile) {
+    return 28;
+  } else {
+    return 20;
+  }
+}

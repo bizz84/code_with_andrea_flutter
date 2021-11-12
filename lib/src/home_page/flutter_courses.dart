@@ -55,29 +55,24 @@ class FlutterCoursesContent extends StatelessWidget {
         screenWidth >= Breakpoints.twoColLayoutMinWidth ? 2 : 1;
     if (crossAxisCount >= 2) {
       return SliverToBoxAdapter(
-        child: Center(
-          child: SizedBox(
-            width: Breakpoints.desktop.toDouble(),
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: horizontalPadding(screenWidth)),
-              child: LayoutGrid(
-                columnSizes: [1.fr, 1.fr],
-                rowSizes: const [auto, auto], // auto size height
-                rowGap: 40,
-                columnGap: 24,
-                children: [
-                  for (var i = 0; i < 4; i++)
-                    GridPlacement(
-                      columnStart: i % 2,
-                      columnSpan: 1,
-                      rowStart: i ~/ 2,
-                      rowSpan: 1,
-                      child: ItemCard(data: ItemCardData.allCoursesData[i]),
-                    ),
-                ],
-              ),
-            ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(
+              horizontal: sliverHorizontalPadding(screenWidth)),
+          child: LayoutGrid(
+            columnSizes: [1.fr, 1.fr],
+            rowSizes: const [auto, auto], // auto size height
+            rowGap: 40,
+            columnGap: 24,
+            children: [
+              for (var i = 0; i < 4; i++)
+                GridPlacement(
+                  columnStart: i % 2,
+                  columnSpan: 1,
+                  rowStart: i ~/ 2,
+                  rowSpan: 1,
+                  child: ItemCard(data: ItemCardData.allCoursesData[i]),
+                ),
+            ],
           ),
         ),
       );
