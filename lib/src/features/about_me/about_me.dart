@@ -36,6 +36,7 @@ class AboutMe extends StatelessWidget {
               ),
               const SizedBox(height: 56),
               const AboutMeContent(),
+              SizedBox(height: screenWidth > Breakpoints.tablet ? 64 : 40),
             ],
           ),
         ),

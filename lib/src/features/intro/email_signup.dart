@@ -1,5 +1,7 @@
 import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
 import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
+import 'package:code_with_andrea_flutter/src/features/common_widgets/email_signup_button.dart';
+import 'package:code_with_andrea_flutter/src/features/common_widgets/email_text_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -89,11 +91,11 @@ class EmailSignupForm extends StatelessWidget {
           children: const [
             Expanded(
               flex: 2,
-              child: EmailTextField(),
+              child: IntroEmailTextField(),
             ),
             SizedBox(width: 16),
             Expanded(
-              child: EmailSignupButton(),
+              child: IntroEmailSignupButton(),
             )
           ],
         ),
@@ -102,70 +104,38 @@ class EmailSignupForm extends StatelessWidget {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: const [
-          SizedBox(height: 48, child: EmailTextField()),
+          SizedBox(height: 48, child: IntroEmailTextField()),
           SizedBox(height: 16),
-          SizedBox(height: 48, child: EmailSignupButton()),
+          SizedBox(
+            height: 48,
+            child: IntroEmailSignupButton(),
+          ),
         ],
       );
     }
   }
 }
 
-class EmailTextField extends StatelessWidget {
-  const EmailTextField({Key? key}) : super(key: key);
+class IntroEmailTextField extends StatelessWidget {
+  const IntroEmailTextField({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      cursorColor: Colors.white,
-      style:
-          Theme.of(context).textTheme.bodyText1!.copyWith(color: Colors.white),
-      decoration: InputDecoration(
-        hintText: 'Email Address',
-        hintStyle: Theme.of(context)
-            .textTheme
-            .bodyText1!
-            .copyWith(color: AppColors.neutral2),
-        filled: true,
-        fillColor: AppColors.neutral5,
-        border: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(8.0)),
-          borderSide: BorderSide(color: AppColors.neutral4, width: 1),
-        ),
-        enabledBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(8.0)),
-          borderSide: BorderSide(color: AppColors.neutral4, width: 1),
-        ),
-        focusedBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(8.0)),
-          borderSide: BorderSide(color: Colors.white, width: 1),
-        ),
-      ),
+    return const EmailTextField(
+      fillColor: AppColors.neutral5,
+      hintColor: AppColors.neutral2,
     );
   }
 }
 
-class EmailSignupButton extends StatelessWidget {
-  const EmailSignupButton({Key? key}) : super(key: key);
+class IntroEmailSignupButton extends StatelessWidget {
+  const IntroEmailSignupButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-          primary: AppColors.primary5,
-          onPrimary: Colors.white,
-          splashFactory: NoSplash.splashFactory,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(6))),
-      child: Text(
-        'Get the course',
-        textAlign: TextAlign.center,
-        style: Theme.of(context)
-            .textTheme
-            .bodyText1!
-            .copyWith(fontWeight: FontWeight.bold, color: Colors.white),
-      ),
-      onPressed: () {},
+    return const EmailSignupButton(
+      primary: AppColors.primary5,
+      onPrimary: Colors.white,
     );
   }
 }
