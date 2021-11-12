@@ -25,7 +25,7 @@ abstract class AppTextTheme {
   TextStyle get footnote;
   TextStyle get footnoteAllCaps;
 
-  static const latoTextStyle = TextStyle(fontFamily: 'Lato');
+  static final latoTextStyle = GoogleFonts.lato();
 }
 
 class DesktopTextTheme implements AppTextTheme {
