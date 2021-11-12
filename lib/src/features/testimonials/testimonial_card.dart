@@ -1,5 +1,7 @@
 import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
 import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
+import 'package:code_with_andrea_flutter/src/constants/constants.dart';
+import 'package:code_with_andrea_flutter/src/features/testimonials/avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -118,19 +120,7 @@ class TestimonialCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 if (data.avatarAssetName != null) ...[
-                  SizedBox(
-                    width: 44,
-                    height: 44,
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          fit: BoxFit.fitWidth,
-                          image: AssetImage(data.avatarAssetName!),
-                        ),
-                        shape: BoxShape.circle,
-                      ),
-                    ),
-                  ),
+                  Avatar(assetName: data.avatarAssetName!, size: 44),
                   const SizedBox(width: 8),
                 ],
                 Expanded(
@@ -154,7 +144,7 @@ class TestimonialCard extends StatelessWidget {
                         children: [
                           for (var i = 0; i < 5; i++) ...[
                             SvgPicture.asset(
-                              'assets/icon-star.svg',
+                              Constants.iconStar,
                               semanticsLabel: 'Star',
                             ),
                             const SizedBox(width: 4),

@@ -37,9 +37,12 @@
 - [x] Testimonials
   - [x] Scattered Grid
   - [x] Testimonial card design
-- [ ] About me
-  - [ ] Grid on desktop
-  - [ ] Linear layout
+- [x] About me
+  - [x] Grid on desktop
+  - [x] Linear layout
 - [ ] Email signup footer
 - [ ] Footer
   - [ ] Responsive
+- [ ] Mobile tweaks
+  - [ ] SafeArea
+  - [ ] Google font Lato

@@ -1,3 +1,4 @@
+import 'package:code_with_andrea_flutter/src/features/about_me/about_me.dart';
 import 'package:code_with_andrea_flutter/src/features/app_header/app_header.dart';
 import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
 import 'package:code_with_andrea_flutter/src/features/cards/featured_tutorials.dart';
@@ -30,6 +31,8 @@ class HomePage extends StatelessWidget {
           SliverToBoxAdapter(child: SectionSeparator()),
           SliverToBoxAdapter(child: TestimonialsHeader()),
           TestimonialsGrid(),
+          SliverToBoxAdapter(child: SectionSeparator()),
+          SliverToBoxAdapter(child: AboutMe()),
         ],
       ),
     );

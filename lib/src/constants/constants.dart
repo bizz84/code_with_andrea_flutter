@@ -16,4 +16,7 @@ class Constants {
       'assets/flutter-firebase-course-banner-small.png';
   static const flutterRestApiCourse =
       'assets/flutter-rest-api-course-banner-small.png';
+
+  static const iconStar = 'assets/icon-star.svg';
+  static const andreaAvatar = 'assets/andrea-avatar.webp';
 }
