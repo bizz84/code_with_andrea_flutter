@@ -35,6 +35,7 @@ class HomePage extends StatelessWidget {
           SliverToBoxAdapter(child: SectionSeparator()),
           SliverToBoxAdapter(child: AboutMe()),
           SliverToBoxAdapter(child: EmailFooterSection()),
+          //SliverToBoxAdapter(child: EmailFooterSectionBody()),
         ],
       ),
     );

@@ -10,12 +10,10 @@ class EmailFooterSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
     //final padding = max((screenWidth - 556.0) / 2.0, 0.0);
     return Container(
       color: AppColors.primary,
       child: Center(
-        // FTW scrolling bug!!
         child: Column(
           children: [
             const SizedBox(height: 80),
@@ -27,21 +25,31 @@ class EmailFooterSection extends StatelessWidget {
                   .headline4!
                   .copyWith(color: Colors.white),
             ),
-            const SizedBox(height: 24),
-            SizedBox(
-              width: 337,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: const [
-                  FooterEmailTextField(),
-                  SizedBox(height: 16),
-                  FooterEmailSignupButton(),
-                ],
-              ),
-            ),
+            // FTW scrolling bug if I add any of these!!
+            //const SizedBox(height: 24),
+            //const EmailFooterSectionBody(),
             const SizedBox(height: 80),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class EmailFooterSectionBody extends StatelessWidget {
+  const EmailFooterSectionBody({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 337,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: const [
+          FooterEmailTextField(),
+          //SizedBox(height: 16),
+          FooterEmailSignupButton(),
+        ],
       ),
     );
   }
