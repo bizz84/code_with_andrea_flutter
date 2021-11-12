@@ -1,5 +1,5 @@
 import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
-import 'package:code_with_andrea_flutter/src/home_page/testimonial_card.dart';
+import 'package:code_with_andrea_flutter/src/features/testimonials/testimonial_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 

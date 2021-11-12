@@ -1,6 +1,6 @@
 import 'package:code_with_andrea_flutter/src/constants/app_text_theme.dart';
 import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
-import 'package:code_with_andrea_flutter/src/home_page/home_page.dart';
+import 'package:code_with_andrea_flutter/src/features/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {

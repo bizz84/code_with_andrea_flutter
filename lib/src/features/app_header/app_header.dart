@@ -1,7 +1,7 @@
-import 'package:code_with_andrea_flutter/src/app_header/app_logo.dart';
-import 'package:code_with_andrea_flutter/src/app_header/mobile_navigation_menu.dart';
-import 'package:code_with_andrea_flutter/src/app_header/navigation_icon_button.dart';
-import 'package:code_with_andrea_flutter/src/app_header/navigation_link.dart';
+import 'package:code_with_andrea_flutter/src/features/app_header/app_logo.dart';
+import 'package:code_with_andrea_flutter/src/features/app_header/mobile_navigation_menu.dart';
+import 'package:code_with_andrea_flutter/src/features/app_header/navigation_icon_button.dart';
+import 'package:code_with_andrea_flutter/src/features/app_header/navigation_link.dart';
 import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
 import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
 import 'package:code_with_andrea_flutter/src/constants/constants.dart';

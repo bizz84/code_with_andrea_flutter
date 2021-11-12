@@ -34,6 +34,12 @@
 - [x] Featured Courses
   - [x] Heading
   - [x] Cards
-- [ ] Testimonials
-  - [ ] Scattered Grid
-  - [ ] Testimonial card design
+- [x] Testimonials
+  - [x] Scattered Grid
+  - [x] Testimonial card design
+- [ ] About me
+  - [ ] Grid on desktop
+  - [ ] Linear layout
+- [ ] Email signup footer
+- [ ] Footer
+  - [ ] Responsive
