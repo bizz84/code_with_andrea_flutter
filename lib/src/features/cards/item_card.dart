@@ -224,7 +224,7 @@ class ItemMetadataTags extends StatelessWidget {
   Widget build(BuildContext context) {
     return Wrap(
       spacing: 8,
-      runSpacing: 16,
+      runSpacing: 0,
       children: [
         for (final tag in tags)
           Chip(

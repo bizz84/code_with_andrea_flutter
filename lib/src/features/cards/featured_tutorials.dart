@@ -121,26 +121,23 @@ class ExploreTutorialsButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 40,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-            primary: AppColors.secondary,
-            onPrimary: AppColors.primary7,
-            splashFactory: NoSplash.splashFactory,
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(6))),
-        child: Text(
-          'Explore More Tutorials  →',
-          textAlign: TextAlign.center,
-          style: Theme.of(context)
-              .textTheme
-              .bodyText1!
-              .copyWith(fontWeight: FontWeight.bold, color: AppColors.primary7),
-        ),
-        onPressed: () {},
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+          primary: AppColors.secondary,
+          onPrimary: AppColors.primary7,
+          splashFactory: NoSplash.splashFactory,
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(6))),
+      child: Text(
+        'Explore More Tutorials  →',
+        textAlign: TextAlign.center,
+        style: Theme.of(context)
+            .textTheme
+            .bodyText1!
+            .copyWith(fontWeight: FontWeight.bold, color: AppColors.primary7),
       ),
+      onPressed: () {},
     );
   }
 }
