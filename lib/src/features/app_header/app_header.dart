@@ -91,7 +91,6 @@ class _MobileNavigationLayoutState extends State<MobileNavigationLayout>
                       const AppLogo(),
                       const Spacer(),
                       const NavigationIconButton(assetName: Constants.search),
-                      // TODO: Use AnimatedIcon
                       GestureDetector(
                         onTap: _toggleMenu,
                         child: AnimatedIcon(
