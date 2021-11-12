@@ -33,7 +33,6 @@ class HomePage extends StatelessWidget {
             FlutterCoursesContent(),
             SliverToBoxAdapter(child: SectionSeparator()),
             SliverToBoxAdapter(child: TestimonialsHeader()),
-            // FTW: Adding this causes a weird scrolling bug!
             TestimonialsLayoutGrid(),
             SliverToBoxAdapter(child: SectionSeparator()),
             SliverToBoxAdapter(child: AboutMe()),

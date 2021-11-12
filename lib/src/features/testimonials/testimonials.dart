@@ -1,3 +1,4 @@
+import 'package:code_with_andrea_flutter/src/constants/app_text_theme.dart';
 import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
 import 'package:code_with_andrea_flutter/src/features/testimonials/testimonial_card.dart';
 import 'package:flutter/material.dart';
@@ -19,8 +20,7 @@ class TestimonialsHeader extends StatelessWidget {
         Text(
           'Over 25,000 enrolled students',
           textAlign: TextAlign.center,
-          style: TextStyle(
-            fontFamily: 'Lato',
+          style: AppTextTheme.latoTextStyle.copyWith(
             fontSize: fontSize,
             fontWeight: FontWeight.bold,
             height: 1.11,

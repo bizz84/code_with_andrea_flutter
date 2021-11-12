@@ -40,9 +40,9 @@
 - [x] About me
   - [x] Grid on desktop
   - [x] Linear layout
-- [ ] Email signup footer
-- [ ] Footer
-  - [ ] Responsive
-- [ ] Mobile tweaks
-  - [ ] SafeArea
-  - [ ] Google font Lato
+- [x] Email signup footer
+- [x] Footer
+  - [x] Responsive
+- [x] Mobile tweaks
+  - [x] SafeArea
+  - [x] Google font Lato
