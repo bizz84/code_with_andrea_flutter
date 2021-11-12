@@ -26,8 +26,8 @@ class EmailFooterSection extends StatelessWidget {
                   .copyWith(color: Colors.white),
             ),
             // FTW scrolling bug if I add any of these!!
-            //const SizedBox(height: 24),
-            //const EmailFooterSectionBody(),
+            const SizedBox(height: 24),
+            const EmailFooterSectionBody(),
             const SizedBox(height: 80),
           ],
         ),

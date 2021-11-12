@@ -4,6 +4,7 @@ import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
 import 'package:code_with_andrea_flutter/src/features/cards/featured_tutorials.dart';
 import 'package:code_with_andrea_flutter/src/features/cards/flutter_courses.dart';
 import 'package:code_with_andrea_flutter/src/features/email_footer/email_footer.dart';
+import 'package:code_with_andrea_flutter/src/features/footer/footer.dart';
 import 'package:code_with_andrea_flutter/src/features/intro/email_signup.dart';
 import 'package:code_with_andrea_flutter/src/features/intro/intro.dart';
 import 'package:code_with_andrea_flutter/src/features/testimonials/testimonials.dart';
@@ -34,8 +35,9 @@ class HomePage extends StatelessWidget {
           TestimonialsGrid(),
           SliverToBoxAdapter(child: SectionSeparator()),
           SliverToBoxAdapter(child: AboutMe()),
-          SliverToBoxAdapter(child: EmailFooterSection()),
-          //SliverToBoxAdapter(child: EmailFooterSectionBody()),
+          // FTW: Adding these causes a weird scrolling bug!
+          //SliverToBoxAdapter(child: EmailFooterSection()),
+          //SliverToBoxAdapter(child: Footer()),
         ],
       ),
     );
