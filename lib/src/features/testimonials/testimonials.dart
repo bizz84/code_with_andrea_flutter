@@ -15,20 +15,24 @@ class TestimonialsHeader extends StatelessWidget {
         ? 36.0
         : (screenWidth > 640 ? 27.0 : 24.0);
     final spacing = screenWidth > Breakpoints.tablet ? 56.0 : 32.0;
-    return Column(
-      children: [
-        Text(
-          'Over 25,000 enrolled students',
-          textAlign: TextAlign.center,
-          style: AppTextTheme.latoTextStyle.copyWith(
-            fontSize: fontSize,
-            fontWeight: FontWeight.bold,
-            height: 1.11,
-            color: Colors.white,
+    return Padding(
+      padding: EdgeInsets.symmetric(
+          horizontal: sliverHorizontalPadding(screenWidth)),
+      child: Column(
+        children: [
+          Text(
+            'Over 25,000 enrolled students',
+            textAlign: TextAlign.center,
+            style: AppTextTheme.latoTextStyle.copyWith(
+              fontSize: fontSize,
+              fontWeight: FontWeight.bold,
+              height: 1.11,
+              color: Colors.white,
+            ),
           ),
-        ),
-        SizedBox(height: spacing),
-      ],
+          SizedBox(height: spacing),
+        ],
+      ),
     );
   }
 }

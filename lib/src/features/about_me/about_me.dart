@@ -83,8 +83,7 @@ class AboutMeContentDesktop extends StatelessWidget {
                   Expanded(
                     child: Text(
                       'I\'m a Google Developer Expert for Dart & Flutter.',
-                      style: TextStyle(
-                        fontFamily: 'Lato',
+                      style: AppTextTheme.latoTextStyle.copyWith(
                         fontSize: fontSize,
                         fontWeight: FontWeight.bold,
                         height: 1.22,
@@ -146,8 +145,7 @@ class AboutMeContentMobile extends StatelessWidget {
         const SizedBox(height: 24),
         Text(
           'I\'m a Google Developer Expert for Dart & Flutter.',
-          style: TextStyle(
-            fontFamily: 'Lato',
+          style: AppTextTheme.latoTextStyle.copyWith(
             fontSize: fontSize,
             fontWeight: FontWeight.bold,
             height: 1.22,
