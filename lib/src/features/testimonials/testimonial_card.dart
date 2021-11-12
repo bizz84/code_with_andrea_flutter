@@ -36,14 +36,14 @@ Cannot praise this course and Andrea’s presentation highly enough.
       "Flutter & Firebase Course: Build a Complete App for iOS & Android",
       null,
     ),
-    TestimonialCardData(
-      """
-Andrea is a great instructor! He packs a ton of great information into each lesson in a concise way.
-      """,
-      "Parker Stevens",
-      "The Complete Dart Developer Guide",
-      "assets/parker-stevens.jpg",
-    ),
+//     TestimonialCardData(
+//       """
+// Andrea is a great instructor! He packs a ton of great information into each lesson in a concise way.
+//       """,
+//       "Parker Stevens",
+//       "The Complete Dart Developer Guide",
+//       "assets/parker-stevens.jpg",
+//     ),
     TestimonialCardData(
       """
 Andrea is an excellent instructor and developer. Very thankful he takes the time to create these courses and maintain his YouTube tutorials.
@@ -83,9 +83,7 @@ Another impressive thing about this course is that most of the videos are around
     TestimonialCardData(
       """
 Animations have always been my weak point, but Andrea's course covers most if not all the biggest Animation topics, and does so with lots of examples.
-
-Another fantastic course from a great teacher.
-      """,
+      """, // Another fantastic course from a great teacher.
       "Tadas Petra",
       "Flutter Animations Masterclass - Full Course",
       "assets/tadas-petra.jpg",
