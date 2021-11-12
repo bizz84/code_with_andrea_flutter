@@ -83,7 +83,6 @@ class FeaturedTutorialsContent extends StatelessWidget {
         ),
       );
     } else {
-      // TODO: Standard ListView?
       return SliverList(
         delegate: SliverChildBuilderDelegate(
           (context, index) {

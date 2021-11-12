@@ -10,15 +10,15 @@ class ItemCardData {
     required this.title,
     required this.description,
     required this.tags,
-    required this.dateFormatted,
-    required this.readTime,
+    required this.metadata1,
+    required this.metadata2,
   });
   final String imageName;
   final String title;
   final String description;
   final List<String> tags;
-  final String dateFormatted;
-  final String readTime;
+  final String metadata1;
+  final String metadata2;
 
   static const allItemsData = [
     ItemCardData(
@@ -27,8 +27,8 @@ class ItemCardData {
       description:
           'Learn how to parse JSON and define type-safe model classes that can handle validation, nullable/optional values, and complex/nested JSON data',
       tags: ['dart', 'flutter', 'networking', 'json'],
-      dateFormatted: 'AUG 19, 2021',
-      readTime: '16 MIN READ',
+      metadata1: 'AUG 19, 2021',
+      metadata2: '16 MIN READ',
     ),
     ItemCardData(
       imageName: Constants.tutorial2,
@@ -36,8 +36,8 @@ class ItemCardData {
       description:
           'Mutating state or calling async code inside the build method can cause unwanted widget rebuilds and unintended behaviour. Here are some examples and rules to follow.',
       tags: ['dart', 'flutter', 'state-management'],
-      dateFormatted: 'AUG 03, 2021',
-      readTime: '7 MIN READ',
+      metadata1: 'AUG 03, 2021',
+      metadata2: '7 MIN READ',
     ),
     ItemCardData(
       imageName: Constants.tutorial3,
@@ -45,8 +45,8 @@ class ItemCardData {
       description:
           'How to implement a responsive layout in Flutter by using a split view on large screens and drawer navigation on mobile.',
       tags: ['dart', 'flutter', 'layouts', 'state-management', 'riverpod'],
-      dateFormatted: 'JUL 26, 2021',
-      readTime: '17 MIN READ',
+      metadata1: 'JUL 26, 2021',
+      metadata2: '17 MIN READ',
     ),
     ItemCardData(
       imageName: Constants.tutorial4,
@@ -55,8 +55,48 @@ class ItemCardData {
       description:
           'Learn how to use the most common Flutter animation APIs with examples and a free gallery app on GitHub.',
       tags: ['dart', 'flutter', 'animations'],
-      dateFormatted: 'JUL 16, 2021',
-      readTime: '13 MIN READ',
+      metadata1: 'JUL 16, 2021',
+      metadata2: '13 MIN READ',
+    ),
+  ];
+
+  static const allCoursesData = [
+    ItemCardData(
+      imageName: Constants.dartCourse,
+      title: 'The Complete Dart Developer Guide',
+      description:
+          'Learn Dart Programming in depth. Includes: basic to advanced topics, exercises, and projects. Fully updated to Dart 2.12.',
+      tags: [],
+      metadata1: 'BEGINNER',
+      metadata2: '10 HOURS',
+    ),
+    ItemCardData(
+      imageName: Constants.flutterAnimationsCourse,
+      title: 'Flutter Animations Masterclass - Full Course',
+      description:
+          'Master Flutter animations and build a completely custom habit tracking application.',
+      tags: [],
+      metadata1: 'INTERMEDIATE',
+      metadata2: '7 HOURS',
+    ),
+    ItemCardData(
+      imageName: Constants.flutterFirebaseCourse,
+      title:
+          'Flutter & Firebase Course: Build a Complete App for iOS & Android',
+      description:
+          'A full course with in-depth content, taking you from the basics all the way up to more advanced topics.',
+      tags: [],
+      metadata1: 'BEGINNER - INTERMEDIATE',
+      metadata2: '21 HOURS',
+    ),
+    ItemCardData(
+      imageName: Constants.flutterRestApiCourse,
+      title: 'Flutter REST API Crash Course',
+      description:
+          'Build a Coronavirus Tracking App, and learn how to use REST APIs in Flutter.',
+      tags: [],
+      metadata1: 'BEGINNER - INTERMEDIATE',
+      metadata2: '2.5 HOURS',
     ),
   ];
 }
@@ -104,11 +144,13 @@ class ItemCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 ItemMetadataWidget(
-                    startText: data.dateFormatted, endText: data.readTime),
-                const SizedBox(height: 16),
-                // TODO: Tags
-                ItemMetadataTags(tags: data.tags),
-                const SizedBox(height: 20),
+                    startText: data.metadata1, endText: data.metadata2),
+                if (data.tags.isNotEmpty) ...[
+                  const SizedBox(height: 16),
+                  ItemMetadataTags(tags: data.tags),
+                  const SizedBox(height: 20),
+                ] else
+                  const SizedBox(height: 18),
                 Text(
                   data.description,
                   // TODO: Responsive?

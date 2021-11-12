@@ -8,4 +8,12 @@ class Constants {
   static const tutorial2 = 'assets/side-effects.png';
   static const tutorial3 = 'assets/split-view.png';
   static const tutorial4 = 'assets/learn-flutter-animations.png';
+
+  static const dartCourse = 'assets/dart-course-banner-small.png';
+  static const flutterAnimationsCourse =
+      'assets/flutter-animations-course-banner-small.png';
+  static const flutterFirebaseCourse =
+      'assets/flutter-firebase-course-banner-small.png';
+  static const flutterRestApiCourse =
+      'assets/flutter-rest-api-course-banner-small.png';
 }
