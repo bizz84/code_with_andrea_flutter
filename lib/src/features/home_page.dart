@@ -18,27 +18,29 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Material(
       color: AppColors.neutral6,
-      child: CustomScrollView(
-        slivers: [
-          SliverToBoxAdapter(child: AppHeader()),
-          SliverToBoxAdapter(child: Intro()),
-          SliverToBoxAdapter(child: EmailSignup()),
-          SliverToBoxAdapter(child: SectionSeparator()),
-          SliverToBoxAdapter(child: FeaturedTutorialsHeader()),
-          FeaturedTutorialsContent(), // already a Sliver
-          SliverToBoxAdapter(child: FeaturedTutorialsFooter()),
-          SliverToBoxAdapter(child: SectionSeparator()),
-          SliverToBoxAdapter(child: FlutterCoursesHeader()),
-          FlutterCoursesContent(),
-          SliverToBoxAdapter(child: SectionSeparator()),
-          SliverToBoxAdapter(child: TestimonialsHeader()),
-          TestimonialsGrid(),
-          SliverToBoxAdapter(child: SectionSeparator()),
-          SliverToBoxAdapter(child: AboutMe()),
-          // FTW: Adding these causes a weird scrolling bug!
-          //SliverToBoxAdapter(child: EmailFooterSection()),
-          //SliverToBoxAdapter(child: Footer()),
-        ],
+      child: SafeArea(
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(child: AppHeader()),
+            SliverToBoxAdapter(child: Intro()),
+            SliverToBoxAdapter(child: EmailSignup()),
+            SliverToBoxAdapter(child: SectionSeparator()),
+            SliverToBoxAdapter(child: FeaturedTutorialsHeader()),
+            FeaturedTutorialsContent(), // already a Sliver
+            SliverToBoxAdapter(child: FeaturedTutorialsFooter()),
+            SliverToBoxAdapter(child: SectionSeparator()),
+            SliverToBoxAdapter(child: FlutterCoursesHeader()),
+            FlutterCoursesContent(),
+            SliverToBoxAdapter(child: SectionSeparator()),
+            SliverToBoxAdapter(child: TestimonialsHeader()),
+            //TestimonialsGrid(),
+            SliverToBoxAdapter(child: SectionSeparator()),
+            SliverToBoxAdapter(child: AboutMe()),
+            // FTW: Adding these causes a weird scrolling bug!
+            SliverToBoxAdapter(child: EmailFooterSection()),
+            SliverToBoxAdapter(child: Footer()),
+          ],
+        ),
       ),
     );
   }

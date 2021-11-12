@@ -8,42 +8,84 @@ class Footer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isWide = screenWidth > Breakpoints.tablet;
     return Center(
       child: SizedBox(
         width: Breakpoints.desktop.toDouble(),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const AppLogo(),
-            const SizedBox(height: 16),
-            Text(
-              'Copyright © 2021 Coding With Flutter Limited',
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.subtitle2!.copyWith(
-                  color: AppColors.neutral4, fontWeight: FontWeight.normal),
-            ),
-            const SizedBox(height: 88),
-            Container(
-              color: Colors.white.withOpacity(0.2),
-              height: 1,
-            ),
-            const SizedBox(height: 32),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                FooterLink(text: 'Contact'),
-                Spacer(),
-                FooterLink(text: 'Twitter'),
-                FooterLink(text: 'Slack'),
-                FooterLink(text: 'GitHub'),
-                FooterLink(text: 'RSS'),
-                FooterLink(text: 'Meta'),
-              ],
-            ),
-          ],
+        child: Padding(
+          padding:
+              EdgeInsets.symmetric(horizontal: horizontalPadding(screenWidth)),
+          child: Column(
+            crossAxisAlignment:
+                isWide ? CrossAxisAlignment.start : CrossAxisAlignment.center,
+            children: [
+              const SizedBox(height: 80),
+              const AppLogo(),
+              const SizedBox(height: 16),
+              Text(
+                'Copyright © 2021 Coding With Flutter Limited',
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                    color: AppColors.neutral4, fontWeight: FontWeight.normal),
+              ),
+              SizedBox(height: isWide ? 88 : 44),
+              Container(
+                color: Colors.white.withOpacity(0.2),
+                height: 1,
+              ),
+              const SizedBox(height: 32),
+              const FooterLinks(),
+              SizedBox(height: isWide ? 112 : 96),
+            ],
+          ),
         ),
       ),
     );
+  }
+}
+
+class FooterLinks extends StatelessWidget {
+  const FooterLinks({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isWide = screenWidth > Breakpoints.tablet;
+    if (isWide) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: const [
+          FooterLink(text: 'Contact'),
+          Spacer(),
+          FooterLink(text: 'Twitter'),
+          SizedBox(width: 32),
+          FooterLink(text: 'Slack'),
+          SizedBox(width: 32),
+          FooterLink(text: 'GitHub'),
+          SizedBox(width: 32),
+          FooterLink(text: 'RSS'),
+          SizedBox(width: 32),
+          FooterLink(text: 'Meta'),
+        ],
+      );
+    } else {
+      return Column(
+        children: const [
+          FooterLink(text: 'Contact'),
+          SizedBox(height: 40),
+          FooterLink(text: 'Twitter'),
+          SizedBox(height: 40),
+          FooterLink(text: 'Slack'),
+          SizedBox(height: 40),
+          FooterLink(text: 'GitHub'),
+          SizedBox(height: 40),
+          FooterLink(text: 'RSS'),
+          SizedBox(height: 40),
+          FooterLink(text: 'Meta'),
+        ],
+      );
+    }
   }
 }
 
