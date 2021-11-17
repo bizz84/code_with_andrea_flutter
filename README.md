@@ -4,11 +4,13 @@ This project is a Flutter clone of the **home page** at [codewithandrea.com](htt
 
 ![Code with Andrea - Flutter screenshot](screenshot.png)
 
-The project runs on mobile, desktop and web. A Flutter web build is hosted here:
+It was built to analyze the performance of the same site built with **Flutter web** vs **HTML+CSS+JS** (see the performance comparison below). But it also runs on desktop and mobile.
+
+A Flutter web build is hosted here:
 
 - [Code with Andrea - Flutter web](https://code-with-andrea-flutter.web.app/#/)
 
-It was built to analyze the performance of the same site built with **Flutter web** vs **HTML+CSS+JS** (see the performance comparison below).
+> **Note**: The Flutter web app has been tested to work on Chrome and Safari. On Firefox, WebP images don't seem to load and sometimes CanvasKit crashes with an "out of memory" exception.
 
 ## Supported Features
 
