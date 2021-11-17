@@ -1,48 +1,40 @@
-# Code With Andrea Clone in Flutter
+# Code With Andrea - Flutter Clone
 
+This project is a Flutter clone of the **home page** at [codewithandrea.com](https://codewithandrea.com/).
 
-## TODO
+![Code with Andrea - Flutter screenshot](screenshot.png)
 
-- [x] Responsive header
-- [ ] Intro
-  - [x] Title
-  - [x] Subtitle
-  - [ ] Custom underlines
-  - [x] Responsive
-- [ ] Email signup section
-  - [x] Title
-  - [x] Subtitle
-  - [ ] ~~Link~~
-  - [x] Email signup Text Field
-  - [x] Email Signup button
-  - [x] Footer
-  - [x] Responsive
-  - [ ] Responsive paddings
-  - [ ] Button hover state
-- [ ] Featured Tutorials
-  - [x] Heading 
-  - [x] Button
-  - [x] Slivers
-  - [x] CSS grid-style layout
-  - [x] Card design
-    - [x] Image
-    - [x] Title
-    - [x] Metadata (date, read time)
-    - [x] Tags
-    - [x] Description
-    - [ ] Hover effect
-- [x] Featured Courses
-  - [x] Heading
-  - [x] Cards
-- [x] Testimonials
-  - [x] Scattered Grid
-  - [x] Testimonial card design
-- [x] About me
-  - [x] Grid on desktop
-  - [x] Linear layout
-- [x] Email signup footer
-- [x] Footer
-  - [x] Responsive
-- [x] Mobile tweaks
-  - [x] SafeArea
-  - [x] Google font Lato
+The project runs on mobile, desktop and web. A Flutter web build is hosted here:
+
+- [Code with Andrea - Flutter web](https://code-with-andrea-flutter.web.app/#/)
+
+It was built to analyze the performance of the same site built with **Flutter web** vs **HTML+CSS+JS** (see the performance comparison below).
+
+## Supported Features
+
+- Responsive navigation header on desktop, tablet, mobile
+- Page intro
+- Featured tutorials (cards)
+- Flutter courses (cards)
+- Testimonials section
+- About section
+- Email signup at the bottom
+- Site footer
+
+## Non-supported Features
+
+This project is **not meant** to be a complete website, but **only a UI clone**.
+
+As such, buttons and links don't do anything when clicked.
+
+Furthermore, only the **dark theme** has been built (while the full site supports **light theme** also).
+
+## Coding style
+
+This prototype has been built in less than 10 hours. While the UI has been broken into small widget classes, this code is **not** production-ready.
+
+## Performance report
+
+TBC
+
+### [LICENSE: MIT](LICENSE.md)
