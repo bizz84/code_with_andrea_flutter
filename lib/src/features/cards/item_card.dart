@@ -2,6 +2,7 @@ import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
 import 'package:code_with_andrea_flutter/src/constants/app_text_theme.dart';
 import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
 import 'package:code_with_andrea_flutter/src/constants/constants.dart';
+import 'package:code_with_andrea_flutter/src/features/cards/border_mouse_hover.dart';
 import 'package:code_with_andrea_flutter/src/tags.dart';
 import 'package:flutter/material.dart';
 
@@ -110,12 +111,8 @@ class ItemCard extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final horizontalPadding = screenWidth >= Breakpoints.tablet ? 32.0 : 20.0;
     final verticalPadding = screenWidth >= Breakpoints.tablet ? 24.0 : 16.0;
-    return Card(
-      color: AppColors.neutral5,
-      elevation: 0,
-      margin: const EdgeInsets.all(0),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      child: Column(
+    return BorderMouseHover(
+      builder: (context, value) => Column(
         children: [
           AspectRatio(
             aspectRatio: 16.0 / 9.0,
