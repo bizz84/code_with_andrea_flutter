@@ -4,6 +4,10 @@ class Constants {
   static const search = 'assets/search.png';
   static const hamburgerMenu = 'assets/hamburger-menu.png';
 
+  static const iconDart = 'assets/icon-dart.svg';
+  static const iconFirebase = 'assets/icon-firebase.svg';
+  static const iconFlutter = 'assets/icon-flutter.svg';
+
   static const tutorial1 = 'assets/how-to-parse-json.webp';
   static const tutorial2 = 'assets/side-effects.webp';
   static const tutorial3 = 'assets/split-view.webp';

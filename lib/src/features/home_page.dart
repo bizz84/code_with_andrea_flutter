@@ -5,7 +5,6 @@ import 'package:code_with_andrea_flutter/src/features/cards/featured_tutorials.d
 import 'package:code_with_andrea_flutter/src/features/cards/flutter_courses.dart';
 import 'package:code_with_andrea_flutter/src/features/email_footer/email_footer.dart';
 import 'package:code_with_andrea_flutter/src/features/footer/footer.dart';
-import 'package:code_with_andrea_flutter/src/features/intro/email_signup.dart';
 import 'package:code_with_andrea_flutter/src/features/intro/intro.dart';
 import 'package:code_with_andrea_flutter/src/features/testimonials/testimonials.dart';
 import 'package:code_with_andrea_flutter/src/features/section_separator.dart';
@@ -23,7 +22,6 @@ class HomePage extends StatelessWidget {
           slivers: [
             SliverToBoxAdapter(child: AppHeader()),
             SliverToBoxAdapter(child: Intro()),
-            SliverToBoxAdapter(child: EmailSignup()),
             SliverToBoxAdapter(child: SectionSeparator()),
             SliverToBoxAdapter(child: FeaturedTutorialsHeader()),
             FeaturedTutorialsContent(), // already a Sliver

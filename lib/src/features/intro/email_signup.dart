@@ -13,63 +13,64 @@ class EmailSignup extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     bool isWide = screenWidth > Breakpoints.tablet;
     final width = isWide ? 522.0 : 337.0;
-    return Center(
-      child: SizedBox(
-        width: width,
-        child: Padding(
-          padding:
-              EdgeInsets.symmetric(horizontal: horizontalPadding(screenWidth)),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(height: isWide ? 88 : 56),
-              Text(
-                'The best Flutter tutorials. Right in your inbox.',
-                textAlign: TextAlign.center,
+    return SizedBox(
+      width: width,
+      child: Padding(
+        padding:
+            EdgeInsets.symmetric(horizontal: horizontalPadding(screenWidth)),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(height: isWide ? 88 : 56),
+            Text(
+              'The best Flutter tutorials. Right in your inbox.',
+              textAlign: TextAlign.center,
+              style: Theme.of(context)
+                  .textTheme
+                  .headline6!
+                  .copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+            ),
+            const SizedBox(height: 16),
+            RichText(
+              text: TextSpan(
+                text:
+                    'Join over 20,000 developers who are taking their Flutter skills to the next level with my free ',
                 style: Theme.of(context)
                     .textTheme
-                    .headline6!
-                    .copyWith(fontWeight: FontWeight.bold, color: Colors.white),
+                    .bodyText1!
+                    .copyWith(color: AppColors.neutral3),
+                children: const <TextSpan>[
+                  TextSpan(
+                      text: 'Flutter email course & newsletter:',
+                      style: TextStyle(
+                        //fontWeight: FontWeight.bold,
+                        color: AppColors.neutral2,
+                        decoration: TextDecoration.underline,
+                      )),
+                ],
               ),
-              const SizedBox(height: 16),
-              RichText(
-                text: TextSpan(
-                  text:
-                      'Join over 20,000 developers who are taking their Flutter skills to the next level with my free ',
-                  style: Theme.of(context)
-                      .textTheme
-                      .bodyText1!
-                      .copyWith(color: AppColors.neutral3),
-                  children: const <TextSpan>[
-                    TextSpan(
-                        text: 'Flutter email course & newsletter:',
-                        style: TextStyle(
-                          //fontWeight: FontWeight.bold,
-                          color: AppColors.neutral2,
-                          decoration: TextDecoration.underline,
-                        )),
-                  ],
-                ),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 32),
-              const EmailSignupForm(),
-              const SizedBox(height: 16),
-              Text(
-                '"Thank you for this great course (and all the great videos). The best part is simply how you have it organized, and the superior job in picking out resources."',
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.subtitle2!.copyWith(
-                    fontWeight: FontWeight.normal, color: Colors.white),
-              ),
-              const SizedBox(height: 8),
-              Text(
-                'Andy Drexler',
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.subtitle2!.copyWith(
-                    fontWeight: FontWeight.normal, color: AppColors.neutral4),
-              ),
-            ],
-          ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 32),
+            const EmailSignupForm(),
+            const SizedBox(height: 16),
+            Text(
+              '"Thank you for this great course (and all the great videos). The best part is simply how you have it organized, and the superior job in picking out resources."',
+              textAlign: TextAlign.center,
+              style: Theme.of(context)
+                  .textTheme
+                  .subtitle2!
+                  .copyWith(fontWeight: FontWeight.normal, color: Colors.white),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Andy Drexler',
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                  fontWeight: FontWeight.normal, color: AppColors.neutral4),
+            ),
+            const SizedBox(height: 120),
+          ],
         ),
       ),
     );
