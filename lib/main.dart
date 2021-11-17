@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       // TODO: Save this as breakpoint
-      final isDesktop = constraints.maxWidth > Breakpoints.desktop;
+      final isDesktop = constraints.maxWidth > Breakpoints.tablet;
       final textTheme = isDesktop ? DesktopTextTheme() : MobileTextTheme();
       return MaterialApp(
         title: 'Code With Andrea',

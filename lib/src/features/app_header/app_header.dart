@@ -12,15 +12,13 @@ class AppHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    bool isWide = screenWidth > Breakpoints.tablet;
     return Container(
       color: AppColors.neutral6,
-      child: LayoutBuilder(builder: (context, constraints) {
-        if (constraints.maxWidth > Breakpoints.desktop) {
-          return const DesktopNavigationLayout();
-        } else {
-          return const MobileNavigationLayout();
-        }
-      }),
+      child: isWide
+          ? const DesktopNavigationLayout()
+          : const MobileNavigationLayout(),
     );
   }
 }
@@ -30,21 +28,23 @@ class DesktopNavigationLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    bool isVeryWide = screenWidth > Breakpoints.desktop;
     return SizedBox(
       height: 64,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: const [
-          SizedBox(width: 80),
-          AppLogo(),
-          Spacer(),
-          NavigationLink(text: 'Tutorials'),
-          NavigationLink(text: 'Courses'),
-          NavigationLink(text: 'Newsletter'),
-          NavigationLink(text: 'Sponsorship'),
-          NavigationIconButton(assetName: Constants.search),
-          NavigationIconButton(assetName: Constants.toggleDay),
-          SizedBox(width: 80),
+        children: [
+          SizedBox(width: isVeryWide ? 80 : 28),
+          const AppLogo(),
+          const Spacer(),
+          const NavigationLink(text: 'Tutorials'),
+          const NavigationLink(text: 'Courses'),
+          const NavigationLink(text: 'Newsletter'),
+          const NavigationLink(text: 'Sponsorship'),
+          const NavigationIconButton(assetName: Constants.search),
+          const NavigationIconButton(assetName: Constants.toggleDay),
+          SizedBox(width: isVeryWide ? 80 : 28),
         ],
       ),
     );
