@@ -37,6 +37,12 @@ This prototype has been built in less than 10 hours. While the UI has been broke
 
 ## Performance report
 
-TBC
+I have deployed this clone as a Flutter web app and compared it with my main site using [PageSpeed Insights](https://pagespeed.web.dev/) and [WebPageTest.org](https://www.webpagetest.org/).
+
+You can find all the results in this video & article on my site:
+
+- [Flutter Web vs HTML, CSS & JS: Performance Comparison](https://codewithandrea.com/videos/flutter-web-html-css-js-performance-comparison/)
+
+You're welcome. 😎
 
 ### [LICENSE: MIT](LICENSE.md)
