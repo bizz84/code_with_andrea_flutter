@@ -66,34 +66,6 @@ class FeaturedTutorialsContent extends StatelessWidget {
   }
 }
 
-class FeaturedTutorialsGridLayout extends StatelessWidget {
-  const FeaturedTutorialsGridLayout({Key? key, required this.crossAxisCount})
-      // we only plan to use this with 1 or 2 columns
-      : assert(crossAxisCount == 1 || crossAxisCount == 2),
-        super(key: key);
-  final int crossAxisCount;
-
-  @override
-  Widget build(BuildContext context) {
-    return LayoutGrid(
-      // set some flexible track sizes based on the crossAxisCount
-      columnSizes: crossAxisCount == 2 ? [1.fr, 1.fr] : [1.fr],
-      // set all the row sizes to auto (self-sizing height)
-      rowSizes: crossAxisCount == 2
-          ? const [auto, auto]
-          : const [auto, auto, auto, auto],
-      rowGap: 40, // equivalent to mainAxisSpacing
-      columnGap: 24, // equivalent to crossAxisSpacing
-      // note: there's no childAspectRatio
-      children: [
-        // render all the cards with *automatic child placement*
-        for (var i = 0; i < 4; i++)
-          ItemCard(data: ItemCardData.allItemsData[i]),
-      ],
-    );
-  }
-}
-
 class FeaturedTutorialsFooter extends StatelessWidget {
   const FeaturedTutorialsFooter({Key? key}) : super(key: key);
 
