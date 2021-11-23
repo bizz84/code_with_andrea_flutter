@@ -1,6 +1,7 @@
 import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
 import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
 import 'package:code_with_andrea_flutter/src/features/cards/item_card.dart';
+import 'package:code_with_andrea_flutter/src/features/cards/item_card_layout_grid.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_layout_grid/flutter_layout_grid.dart';
 
@@ -54,45 +55,42 @@ class FeaturedTutorialsContent extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final crossAxisCount =
         screenWidth >= Breakpoints.twoColLayoutMinWidth ? 2 : 1;
-    if (crossAxisCount >= 2) {
-      return SliverToBoxAdapter(
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: sliverHorizontalPadding(screenWidth)),
-          child: LayoutGrid(
-            columnSizes: [1.fr, 1.fr],
-            rowSizes: const [auto, auto], // auto size height
-            rowGap: 40,
-            columnGap: 24,
-            children: [
-              for (var i = 0; i < 4; i++)
-                GridPlacement(
-                  columnStart: i % 2,
-                  columnSpan: 1,
-                  rowStart: i ~/ 2,
-                  rowSpan: 1,
-                  child: ItemCard(data: ItemCardData.allItemsData[i]),
-                ),
-            ],
-          ),
-        ),
-      );
-    } else {
-      return SliverList(
-        delegate: SliverChildBuilderDelegate(
-          (context, index) {
-            return Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: horizontalPadding(screenWidth),
-                vertical: 12,
-              ),
-              child: ItemCard(data: ItemCardData.allItemsData[index]),
-            );
-          },
-          childCount: 4,
-        ),
-      );
-    }
+    return Padding(
+      padding: EdgeInsets.symmetric(
+          horizontal: sliverHorizontalPadding(screenWidth)),
+      child: ItemCardLayoutGrid(
+        crossAxisCount: crossAxisCount,
+        items: ItemCardData.allItemsData,
+      ),
+    );
+  }
+}
+
+class FeaturedTutorialsGridLayout extends StatelessWidget {
+  const FeaturedTutorialsGridLayout({Key? key, required this.crossAxisCount})
+      // we only plan to use this with 1 or 2 columns
+      : assert(crossAxisCount == 1 || crossAxisCount == 2),
+        super(key: key);
+  final int crossAxisCount;
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutGrid(
+      // set some flexible track sizes based on the crossAxisCount
+      columnSizes: crossAxisCount == 2 ? [1.fr, 1.fr] : [1.fr],
+      // set all the row sizes to auto (self-sizing height)
+      rowSizes: crossAxisCount == 2
+          ? const [auto, auto]
+          : const [auto, auto, auto, auto],
+      rowGap: 40, // equivalent to mainAxisSpacing
+      columnGap: 24, // equivalent to crossAxisSpacing
+      // note: there's no childAspectRatio
+      children: [
+        // render all the cards with *automatic child placement*
+        for (var i = 0; i < 4; i++)
+          ItemCard(data: ItemCardData.allItemsData[i]),
+      ],
+    );
   }
 }
 

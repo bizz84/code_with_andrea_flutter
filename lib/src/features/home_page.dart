@@ -1,3 +1,4 @@
+import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
 import 'package:code_with_andrea_flutter/src/features/about_me/about_me.dart';
 import 'package:code_with_andrea_flutter/src/features/app_header/app_header.dart';
 import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
@@ -15,6 +16,19 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // final screenWidth = MediaQuery.of(context).size.width;
+    // final crossAxisCount =
+    //     screenWidth >= Breakpoints.twoColLayoutMinWidth ? 2 : 1;
+    // return Material(
+    //   color: AppColors.neutral6,
+    //   child: FeaturedTutorialsGridView(
+    //     padding: EdgeInsets.symmetric(
+    //       horizontal: sliverHorizontalPadding(screenWidth),
+    //       vertical: 32,
+    //     ),
+    //     crossAxisCount: crossAxisCount,
+    //   ),
+    // );
     return const Material(
       color: AppColors.neutral6,
       child: SafeArea(
@@ -24,11 +38,11 @@ class HomePage extends StatelessWidget {
             SliverToBoxAdapter(child: Intro()),
             SliverToBoxAdapter(child: SectionSeparator()),
             SliverToBoxAdapter(child: FeaturedTutorialsHeader()),
-            FeaturedTutorialsContent(), // already a Sliver
+            SliverToBoxAdapter(child: FeaturedTutorialsContent()),
             SliverToBoxAdapter(child: FeaturedTutorialsFooter()),
             SliverToBoxAdapter(child: SectionSeparator()),
             SliverToBoxAdapter(child: FlutterCoursesHeader()),
-            FlutterCoursesContent(),
+            SliverToBoxAdapter(child: FlutterCoursesContent()),
             SliverToBoxAdapter(child: SectionSeparator()),
             SliverToBoxAdapter(child: TestimonialsHeader()),
             TestimonialsLayoutGrid(),
