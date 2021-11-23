@@ -16,19 +16,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final screenWidth = MediaQuery.of(context).size.width;
-    // final crossAxisCount =
-    //     screenWidth >= Breakpoints.twoColLayoutMinWidth ? 2 : 1;
-    // return Material(
-    //   color: AppColors.neutral6,
-    //   child: FeaturedTutorialsGridView(
-    //     padding: EdgeInsets.symmetric(
-    //       horizontal: sliverHorizontalPadding(screenWidth),
-    //       vertical: 32,
-    //     ),
-    //     crossAxisCount: crossAxisCount,
-    //   ),
-    // );
     return const Material(
       color: AppColors.neutral6,
       child: SafeArea(
