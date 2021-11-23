@@ -35,6 +35,21 @@ Furthermore, only the **dark theme** has been built (while the full site support
 
 This prototype has been built in less than 10 hours. While the UI has been broken into small widget classes, this code is **not** production-ready.
 
+## Building the app
+
+As specified in the [Flutter web renderers](https://docs.flutter.dev/development/tools/web-renderers) page, the app can be built with three different modes:
+
+```
+# default option (auto)
+flutter build web --release
+# html renderer
+flutter build web --web-renderer html --release
+# canvaskit renderer
+flutter build web --web-renderer canvaskit --release
+```
+
+The tests below were run with **both** the HTML and CanvasKit renderers.
+
 ## Performance report
 
 I have deployed this clone as a Flutter web app and compared it with my main site using [PageSpeed Insights](https://pagespeed.web.dev/) and [WebPageTest.org](https://www.webpagetest.org/).
