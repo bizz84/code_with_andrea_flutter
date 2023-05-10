@@ -37,18 +37,19 @@ class ItemCardLayoutGrid extends StatelessWidget {
 
 // Alternative implementation using GridView
 //
-// For demonstration purposes only
+// Tentative implementation based on GridView
 class ItemCardGridView extends StatelessWidget {
   const ItemCardGridView(
       {Key? key,
       required this.crossAxisCount,
       required this.padding,
       required this.items})
-      // we only plan to use this with 1 or 2 columns
+      // we plan to use this with 1 or 2 columns only
       : assert(crossAxisCount == 1 || crossAxisCount == 2),
         super(key: key);
   final int crossAxisCount;
   final EdgeInsets padding;
+  // list representing the data for all items
   final List<ItemCardData> items;
 
   @override
@@ -59,8 +60,10 @@ class ItemCardGridView extends StatelessWidget {
         crossAxisCount: crossAxisCount,
         mainAxisSpacing: 40,
         crossAxisSpacing: 24,
-        childAspectRatio: 0.75, // width / height
+        // width / height: fixed for *all* items
+        childAspectRatio: 0.75,
       ),
+      // return a custom ItemCard
       itemBuilder: (context, i) => ItemCard(data: items[i]),
       itemCount: items.length,
     );
