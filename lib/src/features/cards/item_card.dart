@@ -140,7 +140,7 @@ class ItemCard extends StatelessWidget {
                   data.title,
                   style: Theme.of(context)
                       .textTheme
-                      .headline5!
+                      .headlineSmall!
                       .copyWith(color: Colors.white),
                 ),
                 const SizedBox(height: 16),
@@ -186,30 +186,30 @@ class ItemMetadataWidget extends StatelessWidget {
           DesktopTextTheme().subheadAllCaps.copyWith(color: AppColors.neutral2),
     );
     // TODO: Would be nice to make this work without overflow
-    return Row(
-      children: [
-        Text(
-          startText,
-          style: DesktopTextTheme()
-              .subheadAllCaps
-              .copyWith(color: AppColors.neutral2),
-        ),
-        const SizedBox(width: 10),
-        Container(
-          height: 16,
-          width: 1,
-          color: AppColors.neutral2,
-        ),
-        const SizedBox(width: 10),
-        Text(
-          endText,
-          overflow: TextOverflow.clip,
-          style: DesktopTextTheme()
-              .subheadAllCaps
-              .copyWith(color: AppColors.neutral2),
-        ),
-      ],
-    );
+    // return Row(
+    //   children: [
+    //     Text(
+    //       startText,
+    //       style: DesktopTextTheme()
+    //           .subheadAllCaps
+    //           .copyWith(color: AppColors.neutral2),
+    //     ),
+    //     const SizedBox(width: 10),
+    //     Container(
+    //       height: 16,
+    //       width: 1,
+    //       color: AppColors.neutral2,
+    //     ),
+    //     const SizedBox(width: 10),
+    //     Text(
+    //       endText,
+    //       overflow: TextOverflow.clip,
+    //       style: DesktopTextTheme()
+    //           .subheadAllCaps
+    //           .copyWith(color: AppColors.neutral2),
+    //     ),
+    //   ],
+    // );
   }
 }
 
@@ -230,7 +230,7 @@ class ItemMetadataTags extends StatelessWidget {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
             label: Text(
               tag,
-              style: Theme.of(context).textTheme.subtitle2!.copyWith(
+              style: Theme.of(context).textTheme.titleSmall!.copyWith(
                   fontWeight: FontWeight.normal, color: tag.color().color),
             ),
           ),

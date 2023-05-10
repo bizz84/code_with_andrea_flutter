@@ -2,7 +2,6 @@ import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
 import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
 import 'package:code_with_andrea_flutter/src/features/common_widgets/email_signup_button.dart';
 import 'package:code_with_andrea_flutter/src/features/common_widgets/email_text_field.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class EmailSignup extends StatelessWidget {
@@ -27,7 +26,7 @@ class EmailSignup extends StatelessWidget {
               textAlign: TextAlign.center,
               style: Theme.of(context)
                   .textTheme
-                  .headline6!
+                  .titleLarge!
                   .copyWith(fontWeight: FontWeight.bold, color: Colors.white),
             ),
             const SizedBox(height: 16),
@@ -37,7 +36,7 @@ class EmailSignup extends StatelessWidget {
                     'Join over 20,000 developers who are taking their Flutter skills to the next level with my free ',
                 style: Theme.of(context)
                     .textTheme
-                    .bodyText1!
+                    .bodyLarge!
                     .copyWith(color: AppColors.neutral3),
                 children: const <TextSpan>[
                   TextSpan(
@@ -59,14 +58,14 @@ class EmailSignup extends StatelessWidget {
               textAlign: TextAlign.center,
               style: Theme.of(context)
                   .textTheme
-                  .subtitle2!
+                  .titleSmall!
                   .copyWith(fontWeight: FontWeight.normal, color: Colors.white),
             ),
             const SizedBox(height: 8),
             Text(
               'Andy Drexler',
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.subtitle2!.copyWith(
+              style: Theme.of(context).textTheme.titleSmall!.copyWith(
                   fontWeight: FontWeight.normal, color: AppColors.neutral4),
             ),
             const SizedBox(height: 120),
@@ -85,11 +84,11 @@ class EmailSignupForm extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     bool isWide = screenWidth > Breakpoints.tablet;
     if (isWide) {
-      return SizedBox(
+      return const SizedBox(
         height: 48,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: const [
+          children: [
             Expanded(
               flex: 2,
               child: IntroEmailTextField(),
@@ -102,9 +101,9 @@ class EmailSignupForm extends StatelessWidget {
         ),
       );
     } else {
-      return Column(
+      return const Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
+        children: [
           SizedBox(height: 48, child: IntroEmailTextField()),
           SizedBox(height: 16),
           SizedBox(
@@ -123,7 +122,7 @@ class IntroEmailTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const EmailTextField(
-      fillColor: AppColors.neutral5,
+      fillColor: AppColors.neutral6,
       hintColor: AppColors.neutral2,
     );
   }

@@ -26,7 +26,7 @@ class Footer extends StatelessWidget {
               Text(
                 'Copyright © 2021 Coding With Flutter Limited',
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                style: Theme.of(context).textTheme.titleSmall!.copyWith(
                     color: AppColors.neutral4, fontWeight: FontWeight.normal),
               ),
               SizedBox(height: isWide ? 88 : 44),
@@ -53,9 +53,9 @@ class FooterLinks extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final isWide = screenWidth > Breakpoints.tablet;
     if (isWide) {
-      return Row(
+      return const Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: const [
+        children: [
           FooterLink(text: 'Contact'),
           Spacer(),
           FooterLink(text: 'Twitter'),
@@ -70,8 +70,8 @@ class FooterLinks extends StatelessWidget {
         ],
       );
     } else {
-      return Column(
-        children: const [
+      return const Column(
+        children: [
           FooterLink(text: 'Contact'),
           SizedBox(height: 40),
           FooterLink(text: 'Twitter'),
@@ -98,7 +98,7 @@ class FooterLink extends StatelessWidget {
       text,
       style: Theme.of(context)
           .textTheme
-          .subtitle2!
+          .titleSmall!
           .copyWith(color: Colors.white, fontWeight: FontWeight.normal),
     );
   }

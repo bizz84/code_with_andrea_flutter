@@ -1,4 +1,3 @@
-import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
 import 'package:code_with_andrea_flutter/src/features/about_me/about_me.dart';
 import 'package:code_with_andrea_flutter/src/features/app_header/app_header.dart';
 import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
@@ -17,7 +16,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Material(
-      color: AppColors.neutral6,
+      color: AppColors.neutral7,
       child: SafeArea(
         child: CustomScrollView(
           slivers: [

@@ -23,7 +23,7 @@ class FlutterCoursesHeader extends StatelessWidget {
                 'Flutter courses',
                 style: Theme.of(context)
                     .textTheme
-                    .headline4!
+                    .headlineMedium!
                     .copyWith(color: Colors.white),
               ),
               const SizedBox(height: 16),

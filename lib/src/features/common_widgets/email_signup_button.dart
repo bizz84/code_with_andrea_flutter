@@ -11,8 +11,7 @@ class EmailSignupButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-          primary: primary,
-          onPrimary: onPrimary,
+          foregroundColor: onPrimary, backgroundColor: primary,
           splashFactory: NoSplash.splashFactory,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(6))),
@@ -21,7 +20,7 @@ class EmailSignupButton extends StatelessWidget {
         textAlign: TextAlign.center,
         style: Theme.of(context)
             .textTheme
-            .bodyText1!
+            .bodyLarge!
             .copyWith(fontWeight: FontWeight.bold, color: onPrimary),
       ),
       onPressed: () {},

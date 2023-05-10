@@ -51,7 +51,7 @@ class MobileMenuListTile extends StatelessWidget {
           textAlign: TextAlign.left,
           style: Theme.of(context)
               .textTheme
-              .subtitle2!
+              .titleSmall!
               .copyWith(color: Colors.white),
         ),
       ),
@@ -66,6 +66,10 @@ class MobileToggleButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return OutlinedButton(
       onPressed: onPressed,
+      style: OutlinedButton.styleFrom(
+        foregroundColor: AppColors.neutral6, side: const BorderSide(color: AppColors.neutral2),
+        shape: const StadiumBorder(),
+      ),
       child: SizedBox(
         height: 40,
         child: Row(
@@ -76,15 +80,10 @@ class MobileToggleButton extends StatelessWidget {
             Text('Switch to light mode',
                 style: Theme.of(context)
                     .textTheme
-                    .subtitle2!
+                    .titleSmall!
                     .copyWith(color: Colors.white)),
           ],
         ),
-      ),
-      style: OutlinedButton.styleFrom(
-        primary: AppColors.neutral6,
-        side: const BorderSide(color: AppColors.neutral2),
-        shape: const StadiumBorder(),
       ),
     );
   }

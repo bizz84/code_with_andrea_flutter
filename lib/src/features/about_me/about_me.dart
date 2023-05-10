@@ -22,7 +22,7 @@ class AboutMe extends StatelessWidget {
             children: [
               Text(
                 'ABOUT ME',
-                style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                style: Theme.of(context).textTheme.titleSmall!.copyWith(
                       fontWeight: FontWeight.normal,
                       color: AppColors.primary4,
                     ),
@@ -30,7 +30,7 @@ class AboutMe extends StatelessWidget {
               const SizedBox(height: 16),
               Text(
                 'Hello, I\'m Andrea',
-                style: Theme.of(context).textTheme.headline2!.copyWith(
+                style: Theme.of(context).textTheme.displayMedium!.copyWith(
                       color: Colors.white,
                     ),
               ),
@@ -110,9 +110,9 @@ class AboutMeContentDesktop extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 96),
-        Row(
+        const Row(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             Flexible(
               flex: 1,
               child: AboutParagraph1(),
@@ -211,7 +211,7 @@ class AboutParagraph extends StatelessWidget {
           heading,
           style: Theme.of(context)
               .textTheme
-              .headline5!
+              .headlineSmall!
               .copyWith(color: Colors.white),
         ),
         const SizedBox(height: 32),
@@ -219,7 +219,7 @@ class AboutParagraph extends StatelessWidget {
           content,
           style: Theme.of(context)
               .textTheme
-              .bodyText1!
+              .bodyLarge!
               .copyWith(color: AppColors.neutral2),
         ),
       ],

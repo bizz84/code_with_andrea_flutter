@@ -32,7 +32,7 @@ class IntroHeader extends StatelessWidget {
               textAlign: TextAlign.center,
               style: Theme.of(context)
                   .textTheme
-                  .headline1!
+                  .displayLarge!
                   .copyWith(color: Colors.white),
             ),
             const SizedBox(height: 32),

@@ -3,7 +3,7 @@ import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
 import 'package:code_with_andrea_flutter/src/features/testimonials/testimonial_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_layout_grid/flutter_layout_grid.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+//import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class TestimonialsHeader extends StatelessWidget {
   const TestimonialsHeader({Key? key}) : super(key: key);
@@ -115,34 +115,31 @@ class TestimonialsLayoutGrid extends StatelessWidget {
 }
 
 // FTW: Adding this causes a weird scrolling bug at the end of the page!
-class StaggeredTestimonialsGrid extends StatelessWidget {
-  const StaggeredTestimonialsGrid({Key? key}) : super(key: key);
+// class StaggeredTestimonialsGrid extends StatelessWidget {
+//   const StaggeredTestimonialsGrid({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    final crossAxisCount = screenWidth > 928 ? 3 : (screenWidth > 640 ? 2 : 1);
-    return SliverPadding(
-      padding: EdgeInsets.symmetric(
-          horizontal: sliverHorizontalPadding(screenWidth)),
-      sliver: SliverStaggeredGrid(
-        // Widget seems to get confused when crossAxisCount changes
-        // This ensures a new widget is created when crossAxisCount changes
-        key: ValueKey(crossAxisCount),
-        gridDelegate: SliverStaggeredGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: crossAxisCount,
-          mainAxisSpacing: 24,
-          crossAxisSpacing: 24,
-          staggeredTileCount: 7,
-          staggeredTileBuilder: (index) => const StaggeredTile.fit(1),
-        ),
-        delegate: SliverChildBuilderDelegate(
-          (context, index) =>
-              TestimonialCard(data: TestimonialCardData.allTestimonials[index]),
-          childCount: 7,
-        ),
-      ),
-      //),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     final screenWidth = MediaQuery.of(context).size.width;
+//     final crossAxisCount = screenWidth > 928 ? 3 : (screenWidth > 640 ? 2 : 1);
+//     return SliverPadding(
+//       padding: EdgeInsets.symmetric(
+//           horizontal: sliverHorizontalPadding(screenWidth)),
+//       sliver: SliverAlignedGrid.count(
+//         crossAxisCount: crossAxisCount,
+//         mainAxisSpacing: 24,
+//         crossAxisSpacing: 24,
+//         itemBuilder: (context, index) {
+//           return TestimonialCard(
+//             data: TestimonialCardData.allTestimonials[index],
+//           );
+//         },
+//         itemCount: 7,
+//         // Widget seems to get confused when crossAxisCount changes
+//         // This ensures a new widget is created when crossAxisCount changes
+//         key: ValueKey(crossAxisCount),
+//       ),
+//       //),
+//     );
+//   }
+// }

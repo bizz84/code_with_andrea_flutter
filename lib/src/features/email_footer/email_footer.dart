@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
 import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
@@ -26,7 +25,7 @@ class EmailFooterSection extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: Theme.of(context)
                     .textTheme
-                    .headline4!
+                    .headlineMedium!
                     .copyWith(color: Colors.white),
               ),
               const SizedBox(height: 24),
@@ -45,11 +44,11 @@ class EmailFooterSectionBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return const SizedBox(
       width: 337,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
+        children: [
           FooterEmailTextField(),
           SizedBox(height: 16),
           FooterEmailSignupButton(),
@@ -71,19 +70,19 @@ class EmailFormFooterText extends StatelessWidget {
         text: 'Check my ',
         style: Theme.of(context)
             .textTheme
-            .bodyText1!
+            .bodyLarge!
             .copyWith(color: AppColors.primary2),
         children: <TextSpan>[
           TextSpan(
             text: 'newsletter page',
-            style: Theme.of(context).textTheme.bodyText1!.copyWith(
+            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                 color: Colors.white, decoration: TextDecoration.underline),
           ),
           TextSpan(
             text: ' to learn what\'s inside.',
             style: Theme.of(context)
                 .textTheme
-                .bodyText1!
+                .bodyLarge!
                 .copyWith(color: AppColors.primary2),
           ),
         ],

@@ -42,7 +42,7 @@ class _BorderMouseHoverState extends State<BorderMouseHover>
               ),
               child: DecoratedBox(
                 decoration: BoxDecoration(
-                  color: AppColors.neutral5,
+                  color: AppColors.neutral6,
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: widget.builder(context, _controller.value),

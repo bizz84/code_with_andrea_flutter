@@ -3,7 +3,6 @@ import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
 import 'package:code_with_andrea_flutter/src/features/cards/item_card.dart';
 import 'package:code_with_andrea_flutter/src/features/cards/item_card_layout_grid.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_layout_grid/flutter_layout_grid.dart';
 
 class FeaturedTutorialsHeader extends StatelessWidget {
   const FeaturedTutorialsHeader({Key? key}) : super(key: key);
@@ -26,7 +25,7 @@ class FeaturedTutorialsHeader extends StatelessWidget {
                     'Featured Tutorials',
                     style: Theme.of(context)
                         .textTheme
-                        .headline4!
+                        .headlineMedium!
                         .copyWith(color: Colors.white),
                   ),
                   if (screenWidth > Breakpoints.twoColLayoutMinWidth) ...[
@@ -73,8 +72,8 @@ class FeaturedTutorialsFooter extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     if (screenWidth <= Breakpoints.twoColLayoutMinWidth) {
-      return Column(
-        children: const [
+      return const Column(
+        children: [
           SizedBox(height: 40),
           ExploreTutorialsButton(),
         ],
@@ -93,8 +92,7 @@ class ExploreTutorialsButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-          primary: AppColors.secondary,
-          onPrimary: AppColors.primary7,
+          foregroundColor: AppColors.primary7, backgroundColor: AppColors.secondary,
           splashFactory: NoSplash.splashFactory,
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           shape:
@@ -104,7 +102,7 @@ class ExploreTutorialsButton extends StatelessWidget {
         textAlign: TextAlign.center,
         style: Theme.of(context)
             .textTheme
-            .bodyText1!
+            .bodyLarge!
             .copyWith(fontWeight: FontWeight.bold, color: AppColors.primary7),
       ),
       onPressed: () {},

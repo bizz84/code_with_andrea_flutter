@@ -14,8 +14,8 @@ class Intro extends StatelessWidget {
     return Center(
       child: Stack(
         children: [
-          Column(
-            children: const [
+          const Column(
+            children: [
               IntroHeader(),
               EmailSignup(),
             ],

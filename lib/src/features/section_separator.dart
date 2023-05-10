@@ -5,8 +5,8 @@ class SectionSeparator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: const [
+    return const Column(
+      children: [
         SizedBox(height: 56),
         VerticalSeparator(),
         SizedBox(height: 56),

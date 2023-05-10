@@ -1,5 +1,4 @@
 import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
-import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
 import 'package:code_with_andrea_flutter/src/constants/constants.dart';
 import 'package:code_with_andrea_flutter/src/features/testimonials/avatar.dart';
 import 'package:flutter/material.dart';
@@ -98,7 +97,7 @@ class TestimonialCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: AppColors.neutral5,
+      color: AppColors.neutral6,
       elevation: 0,
       margin: const EdgeInsets.all(0),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
@@ -111,7 +110,7 @@ class TestimonialCard extends StatelessWidget {
               data.content,
               style: Theme.of(context)
                   .textTheme
-                  .bodyText1!
+                  .bodyLarge!
                   .copyWith(color: Colors.white),
             ),
             Row(
@@ -127,12 +126,12 @@ class TestimonialCard extends StatelessWidget {
                     children: [
                       Text(
                         data.author,
-                        style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             fontWeight: FontWeight.bold, color: Colors.white),
                       ),
                       Text(
                         data.courseName,
-                        style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                               fontStyle: FontStyle.italic,
                               color: AppColors.neutral3,
                             ),

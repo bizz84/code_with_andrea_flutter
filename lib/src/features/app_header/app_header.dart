@@ -15,7 +15,7 @@ class AppHeader extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     bool isWide = screenWidth > Breakpoints.tablet;
     return Container(
-      color: AppColors.neutral6,
+      color: AppColors.neutral7,
       child: isWide
           ? const DesktopNavigationLayout()
           : const MobileNavigationLayout(),

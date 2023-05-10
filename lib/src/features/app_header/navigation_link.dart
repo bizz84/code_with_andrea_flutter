@@ -13,7 +13,7 @@ class NavigationLink extends StatelessWidget {
           child: Text(text,
               style: Theme.of(context)
                   .textTheme
-                  .subtitle2!
+                  .titleSmall!
                   .copyWith(color: Colors.white)),
           onPressed: () {},
         ),
