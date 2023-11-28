@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "code-with-andrea-flutter"
-  }
+    "default": "code-with-andrea-flutter",
+    "wasm": "code-with-andrea-flutter-wasm"
+  },
+  "targets": {},
+  "etags": {}
 }
