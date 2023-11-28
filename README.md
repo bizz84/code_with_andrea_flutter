@@ -8,7 +8,11 @@ It was built to analyze the performance of the same site built with **Flutter we
 
 A Flutter web build is hosted here:
 
-- [Code with Andrea - Flutter web](https://code-with-andrea-flutter.web.app/#/)
+- [Code with Andrea - Flutter web demo](https://code-with-andrea-flutter.web.app)
+
+I've also built the same with the [`--wasm` option](https://docs.flutter.dev/platform-integration/web/wasm):
+
+- [Code with Andrea - Flutter web wasm demo](https://code-with-andrea-flutter-wasm.web.app)
 
 > **Note**: The Flutter web app has been tested to work on Chrome and Safari. On Firefox, WebP images don't seem to load and sometimes CanvasKit crashes with an "out of memory" exception.
 
