@@ -85,6 +85,9 @@ unlinked_spec.ds
 **/ios/Flutter/flutter_export_environment.sh
 **/ios/Flutter/.last_build_id
 
+# Web related
+.firebase/hosting*
+
 # web
 web/firebase-config.js
 

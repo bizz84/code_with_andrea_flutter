@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class NavigationLink extends StatelessWidget {
-  const NavigationLink({Key? key, required this.text}) : super(key: key);
+  const NavigationLink({super.key, required this.text});
   final String text;
   @override
   Widget build(BuildContext context) {

@@ -6,7 +6,7 @@ import 'package:flutter_layout_grid/flutter_layout_grid.dart';
 //import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class TestimonialsHeader extends StatelessWidget {
-  const TestimonialsHeader({Key? key}) : super(key: key);
+  const TestimonialsHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class TestimonialsHeader extends StatelessWidget {
 
 // Fallback implementation since StaggeredTestimonialsGrid doesn't work!
 class TestimonialsLayoutGrid extends StatelessWidget {
-  const TestimonialsLayoutGrid({Key? key}) : super(key: key);
+  const TestimonialsLayoutGrid({super.key});
 
   @override
   Widget build(BuildContext context) {

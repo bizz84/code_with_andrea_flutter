@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 
 class EmailSignupButton extends StatelessWidget {
   const EmailSignupButton(
-      {Key? key, required this.primary, required this.onPrimary})
-      : super(key: key);
+      {super.key, required this.primary, required this.onPrimary});
   final Color primary;
   final Color onPrimary;
 

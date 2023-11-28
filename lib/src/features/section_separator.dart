@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SectionSeparator extends StatelessWidget {
-  const SectionSeparator({Key? key}) : super(key: key);
+  const SectionSeparator({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class SectionSeparator extends StatelessWidget {
 }
 
 class VerticalSeparator extends StatelessWidget {
-  const VerticalSeparator({Key? key}) : super(key: key);
+  const VerticalSeparator({super.key});
 
   @override
   Widget build(BuildContext context) {

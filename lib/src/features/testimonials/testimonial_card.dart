@@ -91,7 +91,7 @@ Animations have always been my weak point, but Andrea's course covers most if no
 }
 
 class TestimonialCard extends StatelessWidget {
-  const TestimonialCard({Key? key, required this.data}) : super(key: key);
+  const TestimonialCard({super.key, required this.data});
   final TestimonialCardData data;
 
   @override

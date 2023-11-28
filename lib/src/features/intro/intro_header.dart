@@ -4,7 +4,7 @@ import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
 import 'package:flutter/material.dart';
 
 class IntroHeader extends StatelessWidget {
-  const IntroHeader({Key? key}) : super(key: key);
+  const IntroHeader({super.key});
 
   double topPadding(double maxWidth) {
     if (maxWidth > Breakpoints.tablet) {

@@ -6,7 +6,7 @@ import 'package:code_with_andrea_flutter/src/features/common_widgets/email_text_
 import 'package:flutter/material.dart';
 
 class EmailFooterSection extends StatelessWidget {
-  const EmailFooterSection({Key? key}) : super(key: key);
+  const EmailFooterSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class EmailFooterSection extends StatelessWidget {
 }
 
 class EmailFooterSectionBody extends StatelessWidget {
-  const EmailFooterSectionBody({Key? key}) : super(key: key);
+  const EmailFooterSectionBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +61,7 @@ class EmailFooterSectionBody extends StatelessWidget {
 }
 
 class EmailFormFooterText extends StatelessWidget {
-  const EmailFormFooterText({Key? key}) : super(key: key);
+  const EmailFormFooterText({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +93,7 @@ class EmailFormFooterText extends StatelessWidget {
 }
 
 class FooterEmailTextField extends StatelessWidget {
-  const FooterEmailTextField({Key? key}) : super(key: key);
+  const FooterEmailTextField({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -108,7 +108,7 @@ class FooterEmailTextField extends StatelessWidget {
 }
 
 class FooterEmailSignupButton extends StatelessWidget {
-  const FooterEmailSignupButton({Key? key}) : super(key: key);
+  const FooterEmailSignupButton({super.key});
 
   @override
   Widget build(BuildContext context) {

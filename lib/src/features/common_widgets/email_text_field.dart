@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 
 class EmailTextField extends StatelessWidget {
   const EmailTextField(
-      {Key? key, required this.fillColor, required this.hintColor})
-      : super(key: key);
+      {super.key, required this.fillColor, required this.hintColor});
   final Color fillColor; // AppColors.neutral5
   final Color hintColor; // AppColors.neutral2
 

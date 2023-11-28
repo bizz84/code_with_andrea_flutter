@@ -6,13 +6,12 @@ import 'package:flutter_layout_grid/flutter_layout_grid.dart';
 // See: https://codewithandrea.com/articles/flutter-layout-grid-content-sized-items/
 class ItemCardLayoutGrid extends StatelessWidget {
   const ItemCardLayoutGrid({
-    Key? key,
+    super.key,
     required this.crossAxisCount,
     required this.items,
   })  
   // we only plan to use this with 1 or 2 columns
-  : assert(crossAxisCount == 1 || crossAxisCount == 2),
-        super(key: key);
+  : assert(crossAxisCount == 1 || crossAxisCount == 2);
   final int crossAxisCount;
   final List<ItemCardData> items;
 
@@ -40,13 +39,12 @@ class ItemCardLayoutGrid extends StatelessWidget {
 // Tentative implementation based on GridView
 class ItemCardGridView extends StatelessWidget {
   const ItemCardGridView(
-      {Key? key,
+      {super.key,
       required this.crossAxisCount,
       required this.padding,
       required this.items})
       // we plan to use this with 1 or 2 columns only
-      : assert(crossAxisCount == 1 || crossAxisCount == 2),
-        super(key: key);
+      : assert(crossAxisCount == 1 || crossAxisCount == 2);
   final int crossAxisCount;
   final EdgeInsets padding;
   // list representing the data for all items
