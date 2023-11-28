@@ -3,7 +3,7 @@ import 'package:code_with_andrea_flutter/src/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class MobileNavigationMenu extends StatelessWidget {
-  const MobileNavigationMenu({Key? key}) : super(key: key);
+  const MobileNavigationMenu({super.key});
 
   static const menuHeight = 56 * 4 + 64;
 
@@ -38,7 +38,7 @@ class MobileNavigationMenu extends StatelessWidget {
 }
 
 class MobileMenuListTile extends StatelessWidget {
-  const MobileMenuListTile({Key? key, required this.title}) : super(key: key);
+  const MobileMenuListTile({super.key, required this.title});
   final String title;
   @override
   Widget build(BuildContext context) {
@@ -60,7 +60,7 @@ class MobileMenuListTile extends StatelessWidget {
 }
 
 class MobileToggleButton extends StatelessWidget {
-  const MobileToggleButton({Key? key, this.onPressed}) : super(key: key);
+  const MobileToggleButton({super.key, this.onPressed});
   final VoidCallback? onPressed;
   @override
   Widget build(BuildContext context) {

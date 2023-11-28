@@ -104,7 +104,7 @@ class ItemCardData {
 }
 
 class ItemCard extends StatelessWidget {
-  const ItemCard({Key? key, required this.data}) : super(key: key);
+  const ItemCard({super.key, required this.data});
   final ItemCardData data;
   @override
   Widget build(BuildContext context) {
@@ -170,8 +170,7 @@ class ItemCard extends StatelessWidget {
 
 class ItemMetadataWidget extends StatelessWidget {
   const ItemMetadataWidget(
-      {Key? key, required this.startText, required this.endText})
-      : super(key: key);
+      {super.key, required this.startText, required this.endText});
 
   final String startText;
   final String endText;
@@ -214,7 +213,7 @@ class ItemMetadataWidget extends StatelessWidget {
 }
 
 class ItemMetadataTags extends StatelessWidget {
-  const ItemMetadataTags({Key? key, required this.tags}) : super(key: key);
+  const ItemMetadataTags({super.key, required this.tags});
   final List<String> tags;
 
   @override

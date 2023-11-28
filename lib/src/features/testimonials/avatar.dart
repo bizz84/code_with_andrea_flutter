@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Avatar extends StatelessWidget {
-  const Avatar({Key? key, required this.assetName, required this.size})
-      : super(key: key);
+  const Avatar({super.key, required this.assetName, required this.size});
   final String assetName;
   final double size;
   @override

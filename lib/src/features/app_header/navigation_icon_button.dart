@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 class NavigationIconButton extends StatelessWidget {
-  const NavigationIconButton({Key? key, required this.assetName})
-      : super(key: key);
+  const NavigationIconButton({super.key, required this.assetName});
   final String assetName;
   @override
   Widget build(BuildContext context) {

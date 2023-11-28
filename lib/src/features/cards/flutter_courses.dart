@@ -5,7 +5,7 @@ import 'package:code_with_andrea_flutter/src/features/cards/item_card_layout_gri
 import 'package:flutter/material.dart';
 
 class FlutterCoursesHeader extends StatelessWidget {
-  const FlutterCoursesHeader({Key? key}) : super(key: key);
+  const FlutterCoursesHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class FlutterCoursesHeader extends StatelessWidget {
 }
 
 class FlutterCoursesContent extends StatelessWidget {
-  const FlutterCoursesContent({Key? key}) : super(key: key);
+  const FlutterCoursesContent({super.key});
 
   @override
   Widget build(BuildContext context) {

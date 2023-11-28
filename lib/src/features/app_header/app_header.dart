@@ -8,7 +8,7 @@ import 'package:code_with_andrea_flutter/src/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class AppHeader extends StatelessWidget {
-  const AppHeader({Key? key}) : super(key: key);
+  const AppHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class AppHeader extends StatelessWidget {
 }
 
 class DesktopNavigationLayout extends StatelessWidget {
-  const DesktopNavigationLayout({Key? key}) : super(key: key);
+  const DesktopNavigationLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +52,7 @@ class DesktopNavigationLayout extends StatelessWidget {
 }
 
 class MobileNavigationLayout extends StatefulWidget {
-  const MobileNavigationLayout({Key? key}) : super(key: key);
+  const MobileNavigationLayout({super.key});
 
   @override
   State<MobileNavigationLayout> createState() => _MobileNavigationLayoutState();

@@ -6,7 +6,7 @@ import 'package:code_with_andrea_flutter/src/features/testimonials/avatar.dart';
 import 'package:flutter/material.dart';
 
 class AboutMe extends StatelessWidget {
-  const AboutMe({Key? key}) : super(key: key);
+  const AboutMe({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class AboutMe extends StatelessWidget {
 }
 
 class AboutMeContent extends StatelessWidget {
-  const AboutMeContent({Key? key}) : super(key: key);
+  const AboutMeContent({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +60,7 @@ class AboutMeContent extends StatelessWidget {
 }
 
 class AboutMeContentDesktop extends StatelessWidget {
-  const AboutMeContentDesktop({Key? key}) : super(key: key);
+  const AboutMeContentDesktop({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -130,7 +130,7 @@ class AboutMeContentDesktop extends StatelessWidget {
 }
 
 class AboutMeContentMobile extends StatelessWidget {
-  const AboutMeContentMobile({Key? key}) : super(key: key);
+  const AboutMeContentMobile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -162,7 +162,7 @@ class AboutMeContentMobile extends StatelessWidget {
 }
 
 class AboutParagraph1 extends StatelessWidget {
-  const AboutParagraph1({Key? key}) : super(key: key);
+  const AboutParagraph1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -175,7 +175,7 @@ class AboutParagraph1 extends StatelessWidget {
 }
 
 class AboutParagraph2 extends StatelessWidget {
-  const AboutParagraph2({Key? key}) : super(key: key);
+  const AboutParagraph2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -197,8 +197,7 @@ Happy coding!
 }
 
 class AboutParagraph extends StatelessWidget {
-  const AboutParagraph({Key? key, required this.heading, required this.content})
-      : super(key: key);
+  const AboutParagraph({super.key, required this.heading, required this.content});
   final String heading;
   final String content;
 

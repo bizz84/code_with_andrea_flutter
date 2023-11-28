@@ -4,7 +4,7 @@ import 'package:code_with_andrea_flutter/src/features/app_header/app_logo.dart';
 import 'package:flutter/material.dart';
 
 class Footer extends StatelessWidget {
-  const Footer({Key? key}) : super(key: key);
+  const Footer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class Footer extends StatelessWidget {
 }
 
 class FooterLinks extends StatelessWidget {
-  const FooterLinks({Key? key}) : super(key: key);
+  const FooterLinks({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +90,7 @@ class FooterLinks extends StatelessWidget {
 }
 
 class FooterLink extends StatelessWidget {
-  const FooterLink({Key? key, required this.text}) : super(key: key);
+  const FooterLink({super.key, required this.text});
   final String text;
   @override
   Widget build(BuildContext context) {

@@ -5,7 +5,7 @@ import 'package:code_with_andrea_flutter/src/features/common_widgets/email_text_
 import 'package:flutter/material.dart';
 
 class EmailSignup extends StatelessWidget {
-  const EmailSignup({Key? key}) : super(key: key);
+  const EmailSignup({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +77,7 @@ class EmailSignup extends StatelessWidget {
 }
 
 class EmailSignupForm extends StatelessWidget {
-  const EmailSignupForm({Key? key}) : super(key: key);
+  const EmailSignupForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -117,7 +117,7 @@ class EmailSignupForm extends StatelessWidget {
 }
 
 class IntroEmailTextField extends StatelessWidget {
-  const IntroEmailTextField({Key? key}) : super(key: key);
+  const IntroEmailTextField({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -129,7 +129,7 @@ class IntroEmailTextField extends StatelessWidget {
 }
 
 class IntroEmailSignupButton extends StatelessWidget {
-  const IntroEmailSignupButton({Key? key}) : super(key: key);
+  const IntroEmailSignupButton({super.key});
 
   @override
   Widget build(BuildContext context) {

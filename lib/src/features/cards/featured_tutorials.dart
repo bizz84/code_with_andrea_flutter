@@ -5,7 +5,7 @@ import 'package:code_with_andrea_flutter/src/features/cards/item_card_layout_gri
 import 'package:flutter/material.dart';
 
 class FeaturedTutorialsHeader extends StatelessWidget {
-  const FeaturedTutorialsHeader({Key? key}) : super(key: key);
+  const FeaturedTutorialsHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,7 @@ class FeaturedTutorialsHeader extends StatelessWidget {
 }
 
 class FeaturedTutorialsContent extends StatelessWidget {
-  const FeaturedTutorialsContent({Key? key}) : super(key: key);
+  const FeaturedTutorialsContent({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +66,7 @@ class FeaturedTutorialsContent extends StatelessWidget {
 }
 
 class FeaturedTutorialsFooter extends StatelessWidget {
-  const FeaturedTutorialsFooter({Key? key}) : super(key: key);
+  const FeaturedTutorialsFooter({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +86,7 @@ class FeaturedTutorialsFooter extends StatelessWidget {
 }
 
 class ExploreTutorialsButton extends StatelessWidget {
-  const ExploreTutorialsButton({Key? key}) : super(key: key);
+  const ExploreTutorialsButton({super.key});
 
   @override
   Widget build(BuildContext context) {
