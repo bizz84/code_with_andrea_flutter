@@ -43,13 +43,20 @@ This prototype has been built in less than 10 hours. While the UI has been broke
 
 As specified in the [Flutter web renderers](https://docs.flutter.dev/development/tools/web-renderers) page, the app can be built with three different modes:
 
-```
+```zsh
 # default option (auto)
 flutter build web --release
 # html renderer
 flutter build web --web-renderer html --release
 # canvaskit renderer
 flutter build web --web-renderer canvaskit --release
+```
+
+Additionally, wasm is also supported:
+
+```zsh
+# wasm (experimental)
+flutter build web --wasm --release
 ```
 
 The tests below were run with **both** the HTML and CanvasKit renderers.
