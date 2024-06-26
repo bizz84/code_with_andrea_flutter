@@ -4,9 +4,10 @@ class Constants {
   static const search = 'assets/search.png';
   static const hamburgerMenu = 'assets/hamburger-menu.png';
 
-  static const iconDart = 'assets/icon-dart.svg';
-  static const iconFirebase = 'assets/icon-firebase.svg';
-  static const iconFlutter = 'assets/icon-flutter.svg';
+  static const iconDart = 'assets/svg/icon-dart.svg';
+  static const iconFirebase = 'assets/svg/icon-firebase.svg';
+  static const iconFlutter = 'assets/svg/icon-flutter.svg';
+  static const iconStar = 'assets/svg/icon-star.svg';
 
   static const tutorial1 = 'assets/how-to-parse-json.webp';
   static const tutorial2 = 'assets/side-effects.webp';
@@ -21,6 +22,5 @@ class Constants {
   static const flutterRestApiCourse =
       'assets/flutter-rest-api-course-banner-small.webp';
 
-  static const iconStar = 'assets/icon-star.svg';
   static const andreaAvatar = 'assets/andrea-avatar.webp';
 }

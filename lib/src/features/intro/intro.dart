@@ -3,7 +3,7 @@ import 'package:code_with_andrea_flutter/src/constants/constants.dart';
 import 'package:code_with_andrea_flutter/src/features/intro/email_signup.dart';
 import 'package:code_with_andrea_flutter/src/features/intro/intro_header.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:vector_graphics/vector_graphics.dart';
 
 class Intro extends StatelessWidget {
   const Intro({super.key});
@@ -21,20 +21,23 @@ class Intro extends StatelessWidget {
             ],
           ),
           if (screenWidth > Breakpoints.desktop) ...[
-            Positioned(
+            const Positioned(
               top: 250,
               left: 0,
-              child: SvgPicture.asset(Constants.iconFirebase),
+              child: VectorGraphic(
+                  loader: AssetBytesLoader(Constants.iconFirebase)),
             ),
-            Positioned(
+            const Positioned(
               top: 350,
               right: 0,
-              child: SvgPicture.asset(Constants.iconDart),
+              child:
+                  VectorGraphic(loader: AssetBytesLoader(Constants.iconDart)),
             ),
-            Positioned(
+            const Positioned(
               top: 800,
               right: 100,
-              child: SvgPicture.asset(Constants.iconFlutter),
+              child: VectorGraphic(
+                  loader: AssetBytesLoader(Constants.iconFlutter)),
             ),
           ],
         ],
