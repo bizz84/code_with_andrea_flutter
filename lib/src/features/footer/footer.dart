@@ -8,7 +8,7 @@ class Footer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery.sizeOf(context).width;
     final isWide = screenWidth > Breakpoints.tablet;
     return Center(
       child: SizedBox(
@@ -50,7 +50,7 @@ class FooterLinks extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery.sizeOf(context).width;
     final isWide = screenWidth > Breakpoints.tablet;
     if (isWide) {
       return const Row(

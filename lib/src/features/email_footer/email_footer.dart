@@ -1,4 +1,3 @@
-
 import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
 import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
 import 'package:code_with_andrea_flutter/src/features/common_widgets/email_signup_button.dart';
@@ -10,7 +9,7 @@ class EmailFooterSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery.sizeOf(context).width;
     return Container(
       color: AppColors.primary,
       child: Center(
@@ -76,7 +75,9 @@ class EmailFormFooterText extends StatelessWidget {
           TextSpan(
             text: 'newsletter page',
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                color: Colors.white, decoration: TextDecoration.underline),
+                  color: Colors.white,
+                  decoration: TextDecoration.underline,
+                ),
           ),
           TextSpan(
             text: ' to learn what\'s inside.',

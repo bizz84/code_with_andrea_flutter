@@ -10,11 +10,12 @@ class NavigationLink extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: TextButton(
-          child: Text(text,
-              style: Theme.of(context)
-                  .textTheme
-                  .titleSmall!
-                  .copyWith(color: Colors.white)),
+          child: Text(
+            text,
+            style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                  color: Colors.white,
+                ),
+          ),
           onPressed: () {},
         ),
       ),

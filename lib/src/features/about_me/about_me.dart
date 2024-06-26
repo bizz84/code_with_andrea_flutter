@@ -10,7 +10,7 @@ class AboutMe extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery.sizeOf(context).width;
     return Center(
       child: SizedBox(
         width: Breakpoints.desktop.toDouble(),
@@ -50,12 +50,10 @@ class AboutMeContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    if (screenWidth > Breakpoints.tablet) {
-      return const AboutMeContentDesktop();
-    } else {
-      return const AboutMeContentMobile();
-    }
+    final screenWidth = MediaQuery.sizeOf(context).width;
+    return screenWidth > Breakpoints.tablet
+        ? const AboutMeContentDesktop()
+        : const AboutMeContentMobile();
   }
 }
 
@@ -64,7 +62,7 @@ class AboutMeContentDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery.sizeOf(context).width;
     final fontSize = screenWidth > Breakpoints.tablet
         ? 36.0
         : (screenWidth > 640 ? 27.0 : 24.0);
@@ -106,7 +104,7 @@ class AboutMeContentDesktop extends StatelessWidget {
                       .copyWith(color: AppColors.neutral2),
                 ),
               ),
-            )
+            ),
           ],
         ),
         const SizedBox(height: 96),
@@ -123,7 +121,7 @@ class AboutMeContentDesktop extends StatelessWidget {
               child: AboutParagraph2(),
             ),
           ],
-        )
+        ),
       ],
     );
   }
@@ -134,7 +132,7 @@ class AboutMeContentMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery.sizeOf(context).width;
     final fontSize = screenWidth > Breakpoints.tablet
         ? 36.0
         : (screenWidth > 640 ? 27.0 : 24.0);
@@ -197,8 +195,11 @@ Happy coding!
 }
 
 class AboutParagraph extends StatelessWidget {
-  const AboutParagraph(
-      {super.key, required this.heading, required this.content});
+  const AboutParagraph({
+    super.key,
+    required this.heading,
+    required this.content,
+  });
   final String heading;
   final String content;
 

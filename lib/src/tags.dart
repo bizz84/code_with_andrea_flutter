@@ -23,6 +23,6 @@ class TagColor {
     TagColor(Color(0xFF48731C), Color(0xFFFFFFFF)),
     TagColor(Color(0xFF582391), Color(0xFFFFFFFF)),
     TagColor(Color(0xFFAD5E03), Color(0xFFFFFFFF)),
-    TagColor(Color(0xFFB3122F), Color(0xFFFFFFFF))
+    TagColor(Color(0xFFB3122F), Color(0xFFFFFFFF)),
   ];
 }

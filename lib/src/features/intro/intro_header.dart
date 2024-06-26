@@ -18,7 +18,7 @@ class IntroHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery.sizeOf(context).width;
     return SizedBox(
       width: 880,
       child: Padding(
@@ -46,9 +46,12 @@ class IntroHeader extends StatelessWidget {
                     .copyWith(color: AppColors.neutral2),
                 children: const <TextSpan>[
                   TextSpan(
-                      text: 'all for free!',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white)),
+                    text: 'all for free!',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
                 ],
               ),
               textAlign: TextAlign.center,

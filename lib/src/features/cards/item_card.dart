@@ -108,7 +108,7 @@ class ItemCard extends StatelessWidget {
   final ItemCardData data;
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery.sizeOf(context).width;
     final horizontalPadding = screenWidth >= Breakpoints.tablet ? 32.0 : 20.0;
     final verticalPadding = screenWidth >= Breakpoints.tablet ? 24.0 : 16.0;
     return BorderMouseHover(
@@ -132,7 +132,9 @@ class ItemCard extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.symmetric(
-                horizontal: horizontalPadding, vertical: verticalPadding),
+              horizontal: horizontalPadding,
+              vertical: verticalPadding,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -169,8 +171,11 @@ class ItemCard extends StatelessWidget {
 }
 
 class ItemMetadataWidget extends StatelessWidget {
-  const ItemMetadataWidget(
-      {super.key, required this.startText, required this.endText});
+  const ItemMetadataWidget({
+    super.key,
+    required this.startText,
+    required this.endText,
+  });
 
   final String startText;
   final String endText;
@@ -230,7 +235,9 @@ class ItemMetadataTags extends StatelessWidget {
             label: Text(
               tag,
               style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                  fontWeight: FontWeight.normal, color: tag.color().color),
+                    fontWeight: FontWeight.normal,
+                    color: tag.color().color,
+                  ),
             ),
           ),
       ],

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 class EmailSignupButton extends StatelessWidget {
-  const EmailSignupButton(
-      {super.key, required this.primary, required this.onPrimary});
+  const EmailSignupButton({
+    super.key,
+    required this.primary,
+    required this.onPrimary,
+  });
   final Color primary;
   final Color onPrimary;
 
@@ -10,10 +13,13 @@ class EmailSignupButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-          foregroundColor: onPrimary, backgroundColor: primary,
-          splashFactory: NoSplash.splashFactory,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(6))),
+        foregroundColor: onPrimary,
+        backgroundColor: primary,
+        splashFactory: NoSplash.splashFactory,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(6),
+        ),
+      ),
       child: Text(
         'Get the course',
         textAlign: TextAlign.center,
