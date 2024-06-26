@@ -9,7 +9,7 @@ class FlutterCoursesHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery.sizeOf(context).width;
     return Center(
       child: SizedBox(
         width: Breakpoints.desktop.toDouble(),
@@ -50,12 +50,13 @@ class FlutterCoursesContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery.sizeOf(context).width;
     final crossAxisCount =
         screenWidth >= Breakpoints.twoColLayoutMinWidth ? 2 : 1;
     return SliverPadding(
       padding: EdgeInsets.symmetric(
-          horizontal: sliverHorizontalPadding(screenWidth)),
+        horizontal: sliverHorizontalPadding(screenWidth),
+      ),
       sliver: SliverAlignedGrid.count(
         crossAxisCount: crossAxisCount,
         mainAxisSpacing: 24,

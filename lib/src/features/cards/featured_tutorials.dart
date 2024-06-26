@@ -9,7 +9,7 @@ class FeaturedTutorialsHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery.sizeOf(context).width;
     return Center(
       child: SizedBox(
         width: Breakpoints.desktop.toDouble(),
@@ -51,12 +51,13 @@ class FeaturedTutorialsContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery.sizeOf(context).width;
     final crossAxisCount =
         screenWidth >= Breakpoints.twoColLayoutMinWidth ? 2 : 1;
     return SliverPadding(
       padding: EdgeInsets.symmetric(
-          horizontal: sliverHorizontalPadding(screenWidth)),
+        horizontal: sliverHorizontalPadding(screenWidth),
+      ),
       sliver: SliverAlignedGrid.count(
         crossAxisCount: crossAxisCount,
         mainAxisSpacing: 24,
@@ -75,7 +76,7 @@ class FeaturedTutorialsFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery.sizeOf(context).width;
     if (screenWidth <= Breakpoints.twoColLayoutMinWidth) {
       return const Column(
         children: [
@@ -83,10 +84,8 @@ class FeaturedTutorialsFooter extends StatelessWidget {
           ExploreTutorialsButton(),
         ],
       );
-    } else {
-      // TODO: return something more lightweight
-      return const SizedBox();
     }
+    return const SizedBox.shrink();
   }
 }
 
@@ -97,12 +96,12 @@ class ExploreTutorialsButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-          foregroundColor: AppColors.primary7,
-          backgroundColor: AppColors.secondary,
-          splashFactory: NoSplash.splashFactory,
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(6))),
+        foregroundColor: AppColors.primary7,
+        backgroundColor: AppColors.secondary,
+        splashFactory: NoSplash.splashFactory,
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+      ),
       child: Text(
         'Explore More Tutorials  →',
         textAlign: TextAlign.center,

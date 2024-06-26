@@ -11,7 +11,7 @@ class AppHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery.sizeOf(context).width;
     bool isWide = screenWidth > Breakpoints.tablet;
     return Container(
       color: AppColors.neutral7,
@@ -27,7 +27,7 @@ class DesktopNavigationLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery.sizeOf(context).width;
     bool isVeryWide = screenWidth > Breakpoints.desktop;
     return SizedBox(
       height: 64,
@@ -60,7 +60,15 @@ class MobileNavigationLayout extends StatefulWidget {
 class _MobileNavigationLayoutState extends State<MobileNavigationLayout>
     with SingleTickerProviderStateMixin {
   late final _menuController = AnimationController(
-      vsync: this, duration: const Duration(milliseconds: 150));
+    vsync: this,
+    duration: const Duration(milliseconds: 150),
+  );
+
+  @override
+  void dispose() {
+    _menuController.dispose();
+    super.dispose();
+  }
 
   void _toggleMenu() {
     if (_menuController.isCompleted) {
@@ -73,40 +81,41 @@ class _MobileNavigationLayoutState extends State<MobileNavigationLayout>
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-        animation: _menuController,
-        builder: (context, _) {
-          final height =
-              64 + _menuController.value * MobileNavigationMenu.menuHeight;
-          return SizedBox(
-            height: height,
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 64,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      const SizedBox(width: 28),
-                      Assets.appLogo.image(),
-                      const Spacer(),
-                      NavigationIconButton(child: Assets.search.image()),
-                      GestureDetector(
-                        onTap: _toggleMenu,
-                        child: AnimatedIcon(
-                          icon: AnimatedIcons.menu_close,
-                          progress: _menuController,
-                          color: AppColors.neutral2,
-                        ),
+      animation: _menuController,
+      builder: (context, _) {
+        final height =
+            64 + _menuController.value * MobileNavigationMenu.menuHeight;
+        return SizedBox(
+          height: height,
+          child: Column(
+            children: [
+              SizedBox(
+                height: 64,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const SizedBox(width: 28),
+                    Assets.appLogo.image(),
+                    const Spacer(),
+                    NavigationIconButton(child: Assets.search.image()),
+                    GestureDetector(
+                      onTap: _toggleMenu,
+                      child: AnimatedIcon(
+                        icon: AnimatedIcons.menu_close,
+                        progress: _menuController,
+                        color: AppColors.neutral2,
                       ),
-                      //NavigationIconButton(assetName: Constants.hamburgerMenu),
-                      const SizedBox(width: 28),
-                    ],
-                  ),
+                    ),
+                    //NavigationIconButton(assetName: Constants.hamburgerMenu),
+                    const SizedBox(width: 28),
+                  ],
                 ),
-                const Expanded(child: MobileNavigationMenu()),
-              ],
-            ),
-          );
-        });
+              ),
+              const Expanded(child: MobileNavigationMenu()),
+            ],
+          ),
+        );
+      },
+    );
   }
 }

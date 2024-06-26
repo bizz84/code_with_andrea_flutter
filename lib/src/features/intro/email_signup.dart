@@ -9,7 +9,7 @@ class EmailSignup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery.sizeOf(context).width;
     bool isWide = screenWidth > Breakpoints.tablet;
     final width = isWide ? 522.0 : 337.0;
     return SizedBox(
@@ -40,12 +40,13 @@ class EmailSignup extends StatelessWidget {
                     .copyWith(color: AppColors.neutral3),
                 children: const <TextSpan>[
                   TextSpan(
-                      text: 'Flutter email course & newsletter:',
-                      style: TextStyle(
-                        //fontWeight: FontWeight.bold,
-                        color: AppColors.neutral2,
-                        decoration: TextDecoration.underline,
-                      )),
+                    text: 'Flutter email course & newsletter:',
+                    style: TextStyle(
+                      //fontWeight: FontWeight.bold,
+                      color: AppColors.neutral2,
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
                 ],
               ),
               textAlign: TextAlign.center,
@@ -66,7 +67,9 @@ class EmailSignup extends StatelessWidget {
               'Andy Drexler',
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                  fontWeight: FontWeight.normal, color: AppColors.neutral4),
+                    fontWeight: FontWeight.normal,
+                    color: AppColors.neutral4,
+                  ),
             ),
             const SizedBox(height: 120),
           ],
@@ -81,7 +84,7 @@ class EmailSignupForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
+    final screenWidth = MediaQuery.sizeOf(context).width;
     bool isWide = screenWidth > Breakpoints.tablet;
     if (isWide) {
       return const SizedBox(
@@ -96,7 +99,7 @@ class EmailSignupForm extends StatelessWidget {
             SizedBox(width: 16),
             Expanded(
               child: IntroEmailSignupButton(),
-            )
+            ),
           ],
         ),
       );

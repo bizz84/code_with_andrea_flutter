@@ -31,22 +31,23 @@ class _BorderMouseHoverState extends State<BorderMouseHover>
         animation: _controller,
         builder: (context, _) {
           return Container(
-              margin: const EdgeInsets.all(2),
-              decoration: BoxDecoration(
-                color: Colors.transparent, // AppColors.neutral5,
-                border: Border.all(
-                  color: AppColors.primary.withOpacity(_controller.value),
-                  width: 2,
-                ),
-                borderRadius: BorderRadius.circular(18),
+            margin: const EdgeInsets.all(2),
+            decoration: BoxDecoration(
+              color: Colors.transparent, // AppColors.neutral5,
+              border: Border.all(
+                color: AppColors.primary.withOpacity(_controller.value),
+                width: 2,
               ),
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  color: AppColors.neutral6,
-                  borderRadius: BorderRadius.circular(16),
-                ),
-                child: widget.builder(context, _controller.value),
-              ));
+              borderRadius: BorderRadius.circular(18),
+            ),
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                color: AppColors.neutral6,
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: widget.builder(context, _controller.value),
+            ),
+          );
         },
       ),
     );

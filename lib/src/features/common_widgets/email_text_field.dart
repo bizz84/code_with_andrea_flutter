@@ -2,8 +2,11 @@ import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class EmailTextField extends StatelessWidget {
-  const EmailTextField(
-      {super.key, required this.fillColor, required this.hintColor});
+  const EmailTextField({
+    super.key,
+    required this.fillColor,
+    required this.hintColor,
+  });
   final Color fillColor; // AppColors.neutral5
   final Color hintColor; // AppColors.neutral2
 

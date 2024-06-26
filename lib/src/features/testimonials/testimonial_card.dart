@@ -5,15 +5,19 @@ import 'package:flutter/material.dart';
 import 'package:vector_graphics/vector_graphics.dart';
 
 class TestimonialCardData {
-  TestimonialCardData(
-      this.content, this.author, this.courseName, this.avatarAssetName);
+  const TestimonialCardData(
+    this.content,
+    this.author,
+    this.courseName,
+    this.avatarAssetName,
+  );
   final String content;
   final String author;
   final String courseName;
   final String? avatarAssetName;
 
   static final List<TestimonialCardData> allTestimonials = [
-    TestimonialCardData(
+    const TestimonialCardData(
       """
 I can honestly say that Andrea's knowledge and guidance is top notch! He explains the principles well which helps you understand the concepts and structures within the Dart language.
 
@@ -23,7 +27,7 @@ This course is a great asset to anyone looking to improve their coding skills. H
       "The Complete Dart Developer Guide",
       null,
     ),
-    TestimonialCardData(
+    const TestimonialCardData(
       """
 Clear explanations, a useful practical application that demonstrates all the core things essential to building an app ready for release into the wild.
 
@@ -43,7 +47,7 @@ Cannot praise this course and Andrea’s presentation highly enough.
 //       "The Complete Dart Developer Guide",
 //       "assets/parker-stevens.jpg",
 //     ),
-    TestimonialCardData(
+    const TestimonialCardData(
       """
 Andrea is an excellent instructor and developer. Very thankful he takes the time to create these courses and maintain his YouTube tutorials.
 
@@ -57,7 +61,7 @@ There are more intermediate level tips I don't see other devs covering. Thanks s
       "Flutter & Firebase Course: Build a Complete App for iOS & Android",
       "assets/niven-shah.jpg",
     ),
-    TestimonialCardData(
+    const TestimonialCardData(
       """
 Up-to-date content, didactic instructor, good support community on Slack, additional resources, tutorials and optional videos with the latest advances in Flutter.
 
@@ -67,7 +71,7 @@ Concise and direct to the point, with a huge number of diagrams. A colossal amou
       "Flutter & Firebase Course: Build a Complete App for iOS & Android",
       null,
     ),
-    TestimonialCardData(
+    const TestimonialCardData(
       """
 This is by far the best flutter course if you want to learn coding best practises while learning flutter, which I think everyone should.
 
@@ -79,7 +83,7 @@ Another impressive thing about this course is that most of the videos are around
       "Flutter & Firebase Course: Build a Complete App for iOS & Android",
       "assets/nipuna-cooray.jpg",
     ),
-    TestimonialCardData(
+    const TestimonialCardData(
       """
 Animations have always been my weak point, but Andrea's course covers most if not all the biggest Animation topics, and does so with lots of examples.
       """, // Another fantastic course from a great teacher.

@@ -30,7 +30,7 @@ class MobileNavigationMenu extends StatelessWidget {
             height: 64.0,
             alignment: Alignment.center,
             child: MobileToggleButton(onPressed: () {}),
-          )
+          ),
         ],
       ),
     );
@@ -78,11 +78,12 @@ class MobileToggleButton extends StatelessWidget {
           children: [
             Assets.toggleDay.image(),
             const SizedBox(width: 12),
-            Text('Switch to light mode',
-                style: Theme.of(context)
-                    .textTheme
-                    .titleSmall!
-                    .copyWith(color: Colors.white)),
+            Text(
+              'Switch to light mode',
+              style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                    color: Colors.white,
+                  ),
+            ),
           ],
         ),
       ),
