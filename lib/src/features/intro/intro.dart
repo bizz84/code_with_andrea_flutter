@@ -1,5 +1,5 @@
+import 'package:code_with_andrea_flutter/gen/assets.gen.dart';
 import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
-import 'package:code_with_andrea_flutter/src/constants/constants.dart';
 import 'package:code_with_andrea_flutter/src/features/intro/email_signup.dart';
 import 'package:code_with_andrea_flutter/src/features/intro/intro_header.dart';
 import 'package:flutter/material.dart';
@@ -21,23 +21,23 @@ class Intro extends StatelessWidget {
             ],
           ),
           if (screenWidth > Breakpoints.desktop) ...[
-            const Positioned(
+            Positioned(
               top: 250,
               left: 0,
               child: VectorGraphic(
-                  loader: AssetBytesLoader(Constants.iconFirebase)),
+                  loader: AssetBytesLoader(const $AssetsSvgGen().iconFirebase)),
             ),
-            const Positioned(
+            Positioned(
               top: 350,
               right: 0,
-              child:
-                  VectorGraphic(loader: AssetBytesLoader(Constants.iconDart)),
+              child: VectorGraphic(
+                  loader: AssetBytesLoader(const $AssetsSvgGen().iconDart)),
             ),
-            const Positioned(
+            Positioned(
               top: 800,
               right: 100,
               child: VectorGraphic(
-                  loader: AssetBytesLoader(Constants.iconFlutter)),
+                  loader: AssetBytesLoader(const $AssetsSvgGen().iconFlutter)),
             ),
           ],
         ],
