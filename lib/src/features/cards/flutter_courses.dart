@@ -1,8 +1,8 @@
 import 'package:code_with_andrea_flutter/src/constants/app_text_theme.dart';
 import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
 import 'package:code_with_andrea_flutter/src/features/cards/item_card.dart';
-import 'package:code_with_andrea_flutter/src/features/cards/item_card_layout_grid.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class FlutterCoursesHeader extends StatelessWidget {
   const FlutterCoursesHeader({super.key});
@@ -53,12 +53,17 @@ class FlutterCoursesContent extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final crossAxisCount =
         screenWidth >= Breakpoints.twoColLayoutMinWidth ? 2 : 1;
-    return Padding(
+    return SliverPadding(
       padding: EdgeInsets.symmetric(
           horizontal: sliverHorizontalPadding(screenWidth)),
-      child: ItemCardLayoutGrid(
+      sliver: SliverAlignedGrid.count(
         crossAxisCount: crossAxisCount,
-        items: ItemCardData.allCoursesData,
+        mainAxisSpacing: 24,
+        crossAxisSpacing: 40,
+        itemCount: ItemCardData.allCoursesData.length,
+        itemBuilder: (context, index) {
+          return ItemCard(data: ItemCardData.allCoursesData[index]);
+        },
       ),
     );
   }

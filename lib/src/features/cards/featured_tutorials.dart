@@ -1,8 +1,8 @@
 import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
 import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
 import 'package:code_with_andrea_flutter/src/features/cards/item_card.dart';
-import 'package:code_with_andrea_flutter/src/features/cards/item_card_layout_grid.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class FeaturedTutorialsHeader extends StatelessWidget {
   const FeaturedTutorialsHeader({super.key});
@@ -54,12 +54,17 @@ class FeaturedTutorialsContent extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final crossAxisCount =
         screenWidth >= Breakpoints.twoColLayoutMinWidth ? 2 : 1;
-    return Padding(
+    return SliverPadding(
       padding: EdgeInsets.symmetric(
           horizontal: sliverHorizontalPadding(screenWidth)),
-      child: ItemCardLayoutGrid(
+      sliver: SliverAlignedGrid.count(
         crossAxisCount: crossAxisCount,
-        items: ItemCardData.allItemsData,
+        mainAxisSpacing: 24,
+        crossAxisSpacing: 40,
+        itemCount: ItemCardData.allItemsData.length,
+        itemBuilder: (context, index) {
+          return ItemCard(data: ItemCardData.allItemsData[index]);
+        },
       ),
     );
   }
@@ -92,7 +97,8 @@ class ExploreTutorialsButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-          foregroundColor: AppColors.primary7, backgroundColor: AppColors.secondary,
+          foregroundColor: AppColors.primary7,
+          backgroundColor: AppColors.secondary,
           splashFactory: NoSplash.splashFactory,
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           shape:

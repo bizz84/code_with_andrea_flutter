@@ -2,8 +2,7 @@ import 'package:code_with_andrea_flutter/src/constants/app_text_theme.dart';
 import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
 import 'package:code_with_andrea_flutter/src/features/testimonials/testimonial_card.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_layout_grid/flutter_layout_grid.dart';
-//import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class TestimonialsHeader extends StatelessWidget {
   const TestimonialsHeader({super.key});
@@ -47,51 +46,33 @@ class TestimonialsLayoutGrid extends StatelessWidget {
     final crossAxisCount =
         screenWidth >= 905 ? 3 : (screenWidth >= 600 ? 2 : 1);
     if (crossAxisCount >= 3) {
-      return SliverToBoxAdapter(
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: sliverHorizontalPadding(screenWidth)),
-          child: LayoutGrid(
-            columnSizes: [1.fr, 1.fr, 1.fr],
-            rowSizes: const [auto, auto], // auto size height
-            rowGap: 24,
-            columnGap: 24,
-            children: [
-              for (var i = 0; i < 6; i++)
-                GridPlacement(
-                  columnStart: i % 3,
-                  columnSpan: 1,
-                  rowStart: i ~/ 3,
-                  rowSpan: 1,
-                  child: TestimonialCard(
-                      data: TestimonialCardData.allTestimonials[i]),
-                ),
-            ],
-          ),
+      return SliverPadding(
+        padding: EdgeInsets.symmetric(
+            horizontal: sliverHorizontalPadding(screenWidth)),
+        sliver: SliverAlignedGrid.count(
+          crossAxisCount: 3,
+          mainAxisSpacing: 24,
+          crossAxisSpacing: 24,
+          itemCount: TestimonialCardData.allTestimonials.length,
+          itemBuilder: (context, index) {
+            return TestimonialCard(
+                data: TestimonialCardData.allTestimonials[index]);
+          },
         ),
       );
     } else if (crossAxisCount >= 2) {
-      return SliverToBoxAdapter(
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: sliverHorizontalPadding(screenWidth)),
-          child: LayoutGrid(
-            columnSizes: [1.fr, 1.fr],
-            rowSizes: const [auto, auto, auto], // auto size height
-            rowGap: 24,
-            columnGap: 24,
-            children: [
-              for (var i = 0; i < 6; i++)
-                GridPlacement(
-                  columnStart: i % 2,
-                  columnSpan: 1,
-                  rowStart: i ~/ 2,
-                  rowSpan: 1,
-                  child: TestimonialCard(
-                      data: TestimonialCardData.allTestimonials[i]),
-                ),
-            ],
-          ),
+      return SliverPadding(
+        padding: EdgeInsets.symmetric(
+            horizontal: sliverHorizontalPadding(screenWidth)),
+        sliver: SliverAlignedGrid.count(
+          crossAxisCount: 2,
+          mainAxisSpacing: 24,
+          crossAxisSpacing: 24,
+          itemCount: TestimonialCardData.allTestimonials.length,
+          itemBuilder: (context, index) {
+            return TestimonialCard(
+                data: TestimonialCardData.allTestimonials[index]);
+          },
         ),
       );
     } else {
