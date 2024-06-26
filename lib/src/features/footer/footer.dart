@@ -1,6 +1,6 @@
+import 'package:code_with_andrea_flutter/gen/assets.gen.dart';
 import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
 import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
-import 'package:code_with_andrea_flutter/src/features/app_header/app_logo.dart';
 import 'package:flutter/material.dart';
 
 class Footer extends StatelessWidget {
@@ -21,7 +21,7 @@ class Footer extends StatelessWidget {
                 isWide ? CrossAxisAlignment.start : CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 80),
-              const AppLogo(),
+              Assets.appLogo.image(),
               const SizedBox(height: 16),
               Text(
                 'Copyright © 2021 Coding With Flutter Limited',

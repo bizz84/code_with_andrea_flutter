@@ -1,7 +1,7 @@
+import 'package:code_with_andrea_flutter/gen/assets.gen.dart';
 import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
 import 'package:code_with_andrea_flutter/src/constants/app_text_theme.dart';
 import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
-import 'package:code_with_andrea_flutter/src/constants/constants.dart';
 import 'package:code_with_andrea_flutter/src/features/testimonials/avatar.dart';
 import 'package:flutter/material.dart';
 
@@ -78,7 +78,7 @@ class AboutMeContentDesktop extends StatelessWidget {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Avatar(assetName: Constants.andreaAvatar, size: 96),
+                  Avatar(assetName: Assets.andreaAvatar.path, size: 96),
                   const SizedBox(width: 60),
                   Expanded(
                     child: Text(
@@ -141,7 +141,7 @@ class AboutMeContentMobile extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Avatar(assetName: Constants.andreaAvatar, size: 96),
+        Avatar(assetName: Assets.andreaAvatar.path, size: 96),
         const SizedBox(height: 24),
         Text(
           'I\'m a Google Developer Expert for Dart & Flutter.',
@@ -197,7 +197,8 @@ Happy coding!
 }
 
 class AboutParagraph extends StatelessWidget {
-  const AboutParagraph({super.key, required this.heading, required this.content});
+  const AboutParagraph(
+      {super.key, required this.heading, required this.content});
   final String heading;
   final String content;
 

@@ -1,5 +1,5 @@
+import 'package:code_with_andrea_flutter/gen/assets.gen.dart';
 import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
-import 'package:code_with_andrea_flutter/src/constants/constants.dart';
 import 'package:code_with_andrea_flutter/src/features/testimonials/avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:vector_graphics/vector_graphics.dart';
@@ -140,8 +140,9 @@ class TestimonialCard extends StatelessWidget {
                       Row(
                         children: [
                           for (var i = 0; i < 5; i++) ...[
-                            const VectorGraphic(
-                              loader: AssetBytesLoader(Constants.iconStar),
+                            VectorGraphic(
+                              loader: AssetBytesLoader(
+                                  const $AssetsSvgGen().iconStar),
                               semanticsLabel: 'Star',
                             ),
                             const SizedBox(width: 4),

@@ -1,7 +1,7 @@
+import 'package:code_with_andrea_flutter/gen/assets.gen.dart';
 import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
 import 'package:code_with_andrea_flutter/src/constants/app_text_theme.dart';
 import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
-import 'package:code_with_andrea_flutter/src/constants/constants.dart';
 import 'package:code_with_andrea_flutter/src/features/cards/border_mouse_hover.dart';
 import 'package:code_with_andrea_flutter/src/tags.dart';
 import 'package:flutter/material.dart';
@@ -22,9 +22,9 @@ class ItemCardData {
   final String metadata1;
   final String metadata2;
 
-  static const allItemsData = [
+  static final allItemsData = [
     ItemCardData(
-      imageName: Constants.tutorial1,
+      imageName: Assets.howToParseJson.path,
       title: 'How to Parse JSON in Dart/Flutter: The Essential Guide',
       description:
           'Learn how to parse JSON and define type-safe model classes that can handle validation, nullable/optional values, and complex/nested JSON data',
@@ -33,7 +33,7 @@ class ItemCardData {
       metadata2: '16 MIN READ',
     ),
     ItemCardData(
-      imageName: Constants.tutorial2,
+      imageName: Assets.sideEffects.path,
       title: 'Side Effects in Flutter: What they are and how to avoid them',
       description:
           'Mutating state or calling async code inside the build method can cause unwanted widget rebuilds and unintended behaviour. Here are some examples and rules to follow.',
@@ -42,7 +42,7 @@ class ItemCardData {
       metadata2: '7 MIN READ',
     ),
     ItemCardData(
-      imageName: Constants.tutorial3,
+      imageName: Assets.splitView.path,
       title: 'Responsive layouts in Flutter: Split View and Drawer Navigation',
       description:
           'How to implement a responsive layout in Flutter by using a split view on large screens and drawer navigation on mobile.',
@@ -51,7 +51,7 @@ class ItemCardData {
       metadata2: '17 MIN READ',
     ),
     ItemCardData(
-      imageName: Constants.tutorial4,
+      imageName: Assets.learnFlutterAnimations.path,
       title:
           'Learn Flutter Animations in 8 Minutes + Free Gallery App on GitHub',
       description:
@@ -62,9 +62,9 @@ class ItemCardData {
     ),
   ];
 
-  static const allCoursesData = [
+  static final allCoursesData = [
     ItemCardData(
-      imageName: Constants.dartCourse,
+      imageName: Assets.dartCourseBannerSmall.path,
       title: 'The Complete Dart Developer Guide',
       description:
           'Learn Dart Programming in depth. Includes: basic to advanced topics, exercises, and projects. Fully updated to Dart 2.12.',
@@ -73,7 +73,7 @@ class ItemCardData {
       metadata2: '10 HOURS',
     ),
     ItemCardData(
-      imageName: Constants.flutterAnimationsCourse,
+      imageName: Assets.flutterAnimationsCourseBannerSmall.path,
       title: 'Flutter Animations Masterclass - Full Course',
       description:
           'Master Flutter animations and build a completely custom habit tracking application.',
@@ -82,7 +82,7 @@ class ItemCardData {
       metadata2: '7 HOURS',
     ),
     ItemCardData(
-      imageName: Constants.flutterFirebaseCourse,
+      imageName: Assets.flutterFirebaseCourseBannerSmall.path,
       title:
           'Flutter & Firebase Course: Build a Complete App for iOS & Android',
       description:
@@ -92,7 +92,7 @@ class ItemCardData {
       metadata2: '21 HOURS',
     ),
     ItemCardData(
-      imageName: Constants.flutterRestApiCourse,
+      imageName: Assets.flutterRestApiCourseBannerSmall.path,
       title: 'Flutter REST API Crash Course',
       description:
           'Build a Coronavirus Tracking App, and learn how to use REST APIs in Flutter.',

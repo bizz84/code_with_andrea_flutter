@@ -1,10 +1,9 @@
-import 'package:code_with_andrea_flutter/src/features/app_header/app_logo.dart';
+import 'package:code_with_andrea_flutter/gen/assets.gen.dart';
 import 'package:code_with_andrea_flutter/src/features/app_header/mobile_navigation_menu.dart';
 import 'package:code_with_andrea_flutter/src/features/app_header/navigation_icon_button.dart';
 import 'package:code_with_andrea_flutter/src/features/app_header/navigation_link.dart';
 import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
 import 'package:code_with_andrea_flutter/src/constants/breakpoints.dart';
-import 'package:code_with_andrea_flutter/src/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class AppHeader extends StatelessWidget {
@@ -36,14 +35,14 @@ class DesktopNavigationLayout extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(width: isVeryWide ? 80 : 28),
-          const AppLogo(),
+          Assets.appLogo.image(),
           const Spacer(),
           const NavigationLink(text: 'Tutorials'),
           const NavigationLink(text: 'Courses'),
           const NavigationLink(text: 'Newsletter'),
           const NavigationLink(text: 'Sponsorship'),
-          const NavigationIconButton(assetName: Constants.search),
-          const NavigationIconButton(assetName: Constants.toggleDay),
+          NavigationIconButton(child: Assets.search.image()),
+          NavigationIconButton(child: Assets.toggleDay.image()),
           SizedBox(width: isVeryWide ? 80 : 28),
         ],
       ),
@@ -88,9 +87,9 @@ class _MobileNavigationLayoutState extends State<MobileNavigationLayout>
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       const SizedBox(width: 28),
-                      const AppLogo(),
+                      Assets.appLogo.image(),
                       const Spacer(),
-                      const NavigationIconButton(assetName: Constants.search),
+                      NavigationIconButton(child: Assets.search.image()),
                       GestureDetector(
                         onTap: _toggleMenu,
                         child: AnimatedIcon(

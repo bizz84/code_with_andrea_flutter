@@ -1,5 +1,5 @@
+import 'package:code_with_andrea_flutter/gen/assets.gen.dart';
 import 'package:code_with_andrea_flutter/src/constants/app_colors.dart';
-import 'package:code_with_andrea_flutter/src/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class MobileNavigationMenu extends StatelessWidget {
@@ -67,7 +67,8 @@ class MobileToggleButton extends StatelessWidget {
     return OutlinedButton(
       onPressed: onPressed,
       style: OutlinedButton.styleFrom(
-        foregroundColor: AppColors.neutral6, side: const BorderSide(color: AppColors.neutral2),
+        foregroundColor: AppColors.neutral6,
+        side: const BorderSide(color: AppColors.neutral2),
         shape: const StadiumBorder(),
       ),
       child: SizedBox(
@@ -75,7 +76,7 @@ class MobileToggleButton extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Image.asset(Constants.toggleDay),
+            Assets.toggleDay.image(),
             const SizedBox(width: 12),
             Text('Switch to light mode',
                 style: Theme.of(context)
